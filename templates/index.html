@@ -14,17 +14,23 @@
     .card {
         box-shadow: 0 16px 48px #E3E7EB;
     }
+
+    image-container {
+    position: relative;
+}
 </style>
 
 <header class="masthead">
     <div class="overlay"></div>
     <div class="container">
         <div class="row">
-            <div class=" col-md-8 col-md-10 mx-auto">
+            <div class=" col-md-8 col-md-12 mx-auto">
                 <div class="site-heading">
                     <h3 class=" site-heading my-4 mt-3 text-white"> Welcome to the Testimonial Page</h3>
                     <p class="text-light">Embark on a Journey of Discovery &nbsp
                     </p>
+                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -37,10 +43,20 @@
             {% for post in post_list %}
             <div class="card mb-4">
                 <div class="card-body">
-                    <h2 class="card-title">{{ post.title }}</h2>
-                    <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} </p>
-                    <p class="card-text">{{post.content|slice:":200" }}</p>
-                    <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Read More &rarr;</a>
+                    <div class="image-container">
+                        
+                        <img class="card-img-top"
+                            src="https://res.cloudinary.com/chellej80/image/upload/v1657053329/horse_field_se4no3.jpg">
+                            <div>
+                            <p>
+                                <h2 class="card-title">{{ post.title }}</h2></p>
+                        </div>
+                        
+                        <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} </p>
+                        <p class="card-text">{{post.content|slice:":200" }}</p>
+                        <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Read More &rarr;</a>
+                    </div>
+                    
                 </div>
             </div>
             {% endfor %}
