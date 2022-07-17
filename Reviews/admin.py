@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post, Comment
+from .models import Post, Comment, Review
 
 
 class PostAdmin(admin.ModelAdmin):
@@ -10,7 +10,7 @@ class PostAdmin(admin.ModelAdmin):
 
 admin.site.register(Post, PostAdmin)
 
-@admin.register(Comment)
+#@admin.register(Comment)
 
 class CommentAdmin(admin.ModelAdmin):
     list_display = ('name', 'body', 'post', 'created_on', 'active')
@@ -21,7 +21,7 @@ class CommentAdmin(admin.ModelAdmin):
     def approve_comments(self, request, queryset):
         queryset.update(active=True)
 
-@admin.site.register(Review, ReviewAdmin)
+admin.site.register(Comment, CommentAdmin)
 
 class ReviewAdmin(admin.ModelAdmin):
     model = Review
@@ -31,4 +31,4 @@ class ReviewAdmin(admin.ModelAdmin):
     actions = ['approve_comments']
     #search_fields = ['comment']
     
-
+admin.site.register(Review, ReviewAdmin)
