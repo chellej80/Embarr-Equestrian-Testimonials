@@ -48,6 +48,7 @@ class Comment(models.Model):
 
     post = models.ForeignKey(Post, on_delete=models.CASCADE,related_name='comments')
     name = models.CharField(max_length=80)
+    location = models.CharField(max_length=80, default='e.g Dublin')
     email = models.EmailField()
     body = models.TextField()
     rating = models.IntegerField(choices=RATING_CHOICES, default='5')
