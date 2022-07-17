@@ -1,5 +1,5 @@
-from .models import Post, Comment, Review
-from .forms import CommentForm, ReviewForm
+from .models import Post, Comment
+from .forms import CommentForm
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
 

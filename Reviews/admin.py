@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post, Comment, Review
+from .models import Post, Comment
 
 
 class PostAdmin(admin.ModelAdmin):
@@ -22,13 +22,3 @@ class CommentAdmin(admin.ModelAdmin):
         queryset.update(active=True)
 
 admin.site.register(Comment, CommentAdmin)
-
-class ReviewAdmin(admin.ModelAdmin):
-    model = Review
-    list_display = ('rating', 'name', 'email', 'body', 'created_on', 'active')
-    list_filter = ('active', 'created_on')
-    search_fields = ('name', 'email', 'body')
-    #actions = ['approve_comments']
-    #search_fields = ['comment']
-    
-admin.site.register(Review, ReviewAdmin)

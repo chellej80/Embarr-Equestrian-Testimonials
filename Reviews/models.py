@@ -37,21 +37,7 @@ class Post(models.Model):
         return self.likes.count()
 
 class Comment(models.Model):
-    post = models.ForeignKey(Post, on_delete=models.CASCADE,related_name='comments')
-    name = models.CharField(max_length=80)
-    email = models.EmailField()
-    body = models.TextField()
-    created_on = models.DateTimeField(auto_now_add=True)
-    active = models.BooleanField(default=False)
 
-    class Meta:
-        ordering = ['created_on']
-
-    def __str__(self):
-        return 'Comment {} by {}'.format(self.body, self.name)
-
-
-class Review(models.Model):
     RATING_CHOICES = (
         (1, '1'),
         (2, '2'),
@@ -60,10 +46,11 @@ class Review(models.Model):
         (5, '5'),
     )
 
+    post = models.ForeignKey(Post, on_delete=models.CASCADE,related_name='comments')
     name = models.CharField(max_length=80)
     email = models.EmailField()
     body = models.TextField()
-    rating = models.IntegerField(choices=RATING_CHOICES)
+    rating = models.IntegerField(choices=RATING_CHOICES, default='5')
     created_on = models.DateTimeField(auto_now_add=True)
     active = models.BooleanField(default=False)
 
@@ -71,4 +58,4 @@ class Review(models.Model):
         ordering = ['created_on']
 
     def __str__(self):
-        return 'Review {} by {}'.format(self.body, self.name)
+        return 'Comment {} by {}'.format(self.body, self.name)
