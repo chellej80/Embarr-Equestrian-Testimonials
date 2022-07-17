@@ -14,7 +14,7 @@
     <div class="col-md-8 card mb-4  mt-3 ">
       <div class="card-body">
         <!-- comments -->
-        <h2>{{ comments.count }} comments</h2>
+        <h2>{{ comments.count }} Reviews</h2>
 
         {% for comment in comments %}
         <div class="comments" style="padding: 10px;">
@@ -23,6 +23,7 @@
             <span class=" text-muted font-weight-normal">
               {{ comment.created_on }}
             </span>
+            <p>{{ comment.rating }} Stars</p>
           </p>
           {{ comment.body | linebreaks }}
         </div>
@@ -33,10 +34,10 @@
       <div class="card-body">
         {% if new_comment %}
         <div class="alert alert-success" role="alert">
-          Your comment is awaiting moderation
+          Your Review is awaiting moderation
         </div>
         {% else %}
-        <h3>Leave a comment</h3>
+        <h3>Leave a Review</h3>
         <form method="post" style="margin-top: 1.3em;">
           {{ comment_form | crispy }}
           {% csrf_token %}
