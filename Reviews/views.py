@@ -1,5 +1,5 @@
-from .models import Post
-from .forms import CommentForm
+from .models import Post, Comment, Review
+from .forms import CommentForm, ReviewForm
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
 
@@ -36,3 +36,5 @@ class PostList(generic.ListView):
 #class PostDetail(generic.DetailView):
     #model = Post
     #template_name = 'post_detail.html'
+
+

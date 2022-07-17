@@ -1,19 +1,25 @@
-<!DOCTYPE html>
-<html>
-
+{% load crispy_forms_tags %}
     {% block sidebar %}
 
       
     <!-- Sidebar Widgets Column -->
     <div class="col-md-4 float-right ">
     <div class="card my-4">
-            <h5 class="card-header">About Us</h5>
-        <div class="card-body">
-            <p class="card-text">Welcome the the Embarr Equestrian Testimonial Page</p>
+            <h5 class="card-header">Submit a Review</h5>
+            <div class="card-body">
+                <p class="card-text"> 
+                    
+        <p>Posting as: {{ user.name }}</p>
         
-        </div>
+          <h3>Leave a Review</h3>
+          
+        
+      </div>
     </div>
-    </div>
+  </div>
+</div>
+
+
+               
     
     {% endblock sidebar %}
-</html>
