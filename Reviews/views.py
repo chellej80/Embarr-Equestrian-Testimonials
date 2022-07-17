@@ -31,6 +31,7 @@ def post_detail(request, slug):
 class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = 'index.html'
+    paginate_by = 4
 
 #class PostDetail(generic.DetailView):
     #model = Post
