@@ -49,3 +49,27 @@ class Comment(models.Model):
 
     def __str__(self):
         return 'Comment {} by {}'.format(self.body, self.name)
+
+
+class Review(models.Model):
+    RATING_CHOICES = (
+        (1, '1'),
+        (2, '2'),
+        (3, '3'),
+        (4, '4'),
+        (5, '5'),
+    )
+
+    review = models.ForeignKey(Post,on_delete=models.CASCADE,related_name='review')
+    name = models.CharField(max_length=80)
+    email = models.EmailField()
+    body = models.TextField()
+    rating = models.IntegerField(choices=RATING_CHOICES)
+    created_on = models.DateTimeField(auto_now_add=True)
+    active = models.BooleanField(default=False)
+
+    class Meta:
+        ordering = ['created_on']
+
+    def __str__(self):
+        return 'Review {} by {}'.format(self.body, self.name)
