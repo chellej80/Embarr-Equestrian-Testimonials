@@ -1,108 +1,158 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Horse Hangman
 
-Welcome chellej80,
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+## Overview
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+[Embarr Equestrian Testimonials](https://embarr-equestrian-testimonials.herokuapp.com/) is a site page that allows clients/ visitors to post a review/ testimonial on services provided by Embarr Equestrian.
 
-## Gitpod Reminders
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+### The Site 
 
-`python3 -m http.server`
 
-A blue button should appear to click: _Make Public_,
 
-Another blue button should appear to click: _Open Browser_.
+<div><h2>
+Site Mockup
+</h2></div>
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
 
-A blue button should appear to click: _Make Public_,
+## Flowchart
 
-Another blue button should appear to click: _Open Browser_.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+## Database Entity Diagram
 
-To log into the Heroku toolbelt CLI:
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+## User Experience
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+Goals:
 
-------
 
-## Release History
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+First Time User:
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+Returning/ Regular Visitor: 
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+## Features 
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+### Features Left to Implement
+       
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+## Frameworks & Languages Used
+- Django
+- Python
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+Python Packages:
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+-
+- OS: modules provide numerous tools to deal with filenames, paths, directories
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+## Frameworks, Libaries and technologies used
 
-------
+- [Git/ Github](https://github.com/) - Git/Github was used for version control, storage and deployment of the project.
+- [Heroku](https://www.heroku.com/) - Heroku was used to deploy and create the terminal application.
+- [Techsini](https://techsini.com/multi-mockup) - This was used for the mockup image in the overview.
 
-## FAQ about the uptime script
 
-**Why have you added this script?**
+## Testing Conducted 
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+### Usability testing 
 
-**How will this affect me?**
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+### Bugs
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
 
-**So….?**
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+### Content 
 
-**Can I opt out?**
+I reviewed all content on the site for:
+- Grammar and spelling mistakes
+- Hangman pictures are placed properly with proper sizes & displaying as expected
+- Instructions are clear and contain correct information
+- Verified all text/ headings are displaying correctly
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+### Validation
 
-**Anything more?**
+I ran all the Python Code through [PEP8](http://pep8online.com/)
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
 
----
+## Lighthouse
 
-Happy coding!
+Lighthouse was used to test Performance, Best Practices, Accessibility and SEO on Desktop.
+
+<img src=images/lighthouse.JPG>
+
+
+## Credits
+
+Python Code inspired and adapted from the following tutorials and sources:
+
+- https://www.pythonforbeginners.com/code-snippets-source-code/game-hangman
+
+- https://inventwithpython.com/invent4thed/chapter8.html
+
+- https://www.w3schools.com/python/default.asp
+
+- https://www.youtube.com/watch?v=pFvSb7cb_Us
+
+- https://note.nkmk.me/en/python-textwrap-wrap-fill-shorten/
+
+- https://www.sololearn.com/Discuss/1582033/how-to-check-if-input-is-empty-in-python
+
+- Code Institute - Blog 
+
+Flowchart created in:
+
+- https://app.diagrams.net/
+
+
+### Content
+
+All content was written by the project owner.
+
+
+### Readme 
+
+- I used the 
+[Markdown cheat sheet](https://github.com/tchapi/markdown-cheatsheet/blob/master/README.md) and the [love running template ](https://github.com/Code-Institute-Solutions/readme-template )to help put together my readme.
+
+
+### Acknowledgments
+
+
+
+
+# Deployment
+
+The site was deployed to Heroku. 
+
+The steps to deploy are as follows: 
+
+- Log in to Heroku or create an account
+- On the main page click the button labelled New in the top right corner and from the drop-down menu select Create New App
+- You must enter a unique app name
+- Next select your region
+- Click on the Create App button
+- The next page is the project’s Deploy Tab. Click on the Settings Tab and scroll down to Config Vars
+- Click Reveal Config Vars and enter port into the Key box and 8000 into the Value box and click the Add button
+- Scroll down to the Buildpack section click Add Buildpack select python and click Save Changes
+- Repeat step 8 to add node.js. o Note: The Buildpacks must be in the correct order. If not click and drag them to move into the correct order
+- Go to the top of the page and choose the Deploy tab
+- Select Github as the deployment method
+- Confirm you want to connect to GitHub
+- Search for the repository name and click the connect button
+- Scroll to the bottom of the deploy page and select the preferred deployment type
+- Click either Enable Automatic Deploys for automatic deployment when you push updates to Github
+
+  - On submission the project is forked in Github, by forking the project a copy of the original repository is made that can be viewed without affecting the original repository by following these steps: In the GitHub repository, locate the settings, above this is the option to 'fork', select this to create a copy
+
+  - Cloning a repository: When you create a repository on GitHub.com, it exists as a remote repository. You can clone your repository to create a local copy on your computer and sync between the two locations. It makes it easier to fix merge conflicts, add or remove files, and push larger commits. 
+
+The live link can be found here - https://horse-hangman.herokuapp.com/ 

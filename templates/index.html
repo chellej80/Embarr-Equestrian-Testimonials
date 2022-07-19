@@ -7,7 +7,7 @@
         <div class="row">
             <div class=" col-md-8 col-md-12 mx-auto">
                 <div class="site-heading">
-                    <h3 class=" site-heading my-4 mt-3 text-white"> Welcome to the Testimonial Page</h3>
+                    <h3 class=" site-heading my-4 mt-3 text-white"> Welcome to the Testimonial Page - Please log in to submit a review of our services</h3>
                     <p class="text-light">Embark on a Journey of Discovery &nbsp
                     </p>
                     </div>
@@ -35,7 +35,7 @@
                         
                         <!--<p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} </p>-->
                         <p class="card-text">{{post.content|slice:":200" }}</p>
-                        <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Review &rarr;</a>
+                        <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Click here to Review &rarr;</a>
                     </div>
                     
                 </div>
