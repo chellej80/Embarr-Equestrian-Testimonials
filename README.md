@@ -15,11 +15,6 @@ Site Mockup
 </h2></div>
 
 
-## Flowchart
-
-
-## Database Entity Diagram
-
 
 ## User Experience
 
@@ -32,7 +27,13 @@ First Time User:
 
 Returning/ Regular Visitor: 
 
+## User Stories/ Agile Project 
 
+## Flowchart/ Wireframe
+
+
+
+## Database Entity Diagram
 
 
 ## Features 
@@ -87,7 +88,7 @@ I ran all the Python Code through [PEP8](http://pep8online.com/)
 
 Lighthouse was used to test Performance, Best Practices, Accessibility and SEO on Desktop.
 
-<img src=images/lighthouse.JPG>
+
 
 
 ## Credits
@@ -155,4 +156,4 @@ The steps to deploy are as follows:
 
   - Cloning a repository: When you create a repository on GitHub.com, it exists as a remote repository. You can clone your repository to create a local copy on your computer and sync between the two locations. It makes it easier to fix merge conflicts, add or remove files, and push larger commits. 
 
-The live link can be found here - https://horse-hangman.herokuapp.com/ 
+The live link can be found here - https://embarr-equestrian-testimonials.herokuapp.com/ 
