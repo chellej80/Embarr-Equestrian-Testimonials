@@ -15,26 +15,14 @@ class Post(models.Model):
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
-    likes = models.ManyToManyField(
-        User, related_name='post_like', blank=True)
+    
 
     class Meta:
         ordering = ['-created_on']
 
     def __str__(self):
         return self.title
-    likes = models.ManyToManyField(
-        User, related_name='testpost_like', blank=True)
-
-
-    class Meta:
-        ordering = ["-created_on"]
-
-    def __str__(self):
-        return self.title
-
-    def number_of_likes(self):
-        return self.likes.count()
+    
 
 class Comment(models.Model):
 
@@ -54,7 +42,7 @@ class Comment(models.Model):
     rating = models.IntegerField(choices=RATING_CHOICES, default='5')
     created_on = models.DateTimeField(auto_now_add=True)
     active = models.BooleanField(default=False)
-
+    
     class Meta:
         ordering = ['created_on']
 
