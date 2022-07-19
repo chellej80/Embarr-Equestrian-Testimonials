@@ -31,10 +31,11 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["embarr-equestrian-testimonials.herokuapp.com", "localhost"]
 
+X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 # Application definition
 
