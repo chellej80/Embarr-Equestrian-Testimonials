@@ -1,5 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.dispatch import receiver #add this
+from django.db.models.signals import post_save #add this
 
 # Create your models here.
 STATUS = (
@@ -50,3 +52,7 @@ class Comment(models.Model):
 
     def __str__(self):
         return 'Comment {} by {}'.format(self.body, self.name)
+
+class Profile(models.Model):   #add this class and the following fields
+	user = models.OneToOneField(User, on_delete=models.CASCADE)
+	products = models.ManyToManyField(Product)
