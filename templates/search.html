@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %} 
+Search
+{% endblock %}
+{% block content %}
+
+{% if q %}
+<h1>Posts containing "{{ q }}"</h1>
+<p>
+    {% with results.count as total_results %}
+    Found {{ total_results}} result{{total_results|pluralize}}
+    {% endwith %}
+</p>
+
+{% for post in results %}
+<h5><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h5>
+{% empty % }
+<p>there are no results</p>
+
+{% endfor %}
+ 
+{% endif %}
+
+<form method="get">
+    {{ form.as_p}}
+    <input class="btn btn-primary my-1" type="submit" value="Search">
+</form>
+
+{% endblock %}

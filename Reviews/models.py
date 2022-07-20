@@ -34,6 +34,7 @@ class Comment(models.Model):
         (5, '5'),
     )
 
+    
     post = models.ForeignKey(Post, on_delete=models.CASCADE,related_name='comments')
     name = models.CharField(max_length=80)
     location = models.CharField(max_length=80, default='e.g Dublin')
@@ -42,6 +43,7 @@ class Comment(models.Model):
     rating = models.IntegerField(choices=RATING_CHOICES, default='5')
     created_on = models.DateTimeField(auto_now_add=True)
     active = models.BooleanField(default=False)
+    
     
     class Meta:
         ordering = ['created_on']

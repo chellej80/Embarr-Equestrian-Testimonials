@@ -1,5 +1,5 @@
 from .models import Post, Comment
-from .forms import CommentForm
+from .forms import CommentForm, searchForm
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
 from django.views.generic.edit import DeleteView
@@ -64,3 +64,18 @@ class PostCommentDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView)
         return reverse('post_detail', kwargs=dict(slug=self.kwargs['slug']))
 
 
+def search_post(request):
+    form = searchForm()
+    q = ''
+    results =[]
+
+    if 'q' in request.GET:
+        form = searchForm(request.GET)
+        if form.is_valid():
+            q = form.cleaned_data['q']
+            results = Post.objects.filter(title=q)
+    
+    return render(request, 'search.html',
+                    {'form':form,
+                     'q':q, 
+                     'results': results})

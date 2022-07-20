@@ -12,14 +12,12 @@ body {
         display: inline-block;
         height: 33vh;
         width: 100%;
-        background:#445261;
+        background:#698bb0;
     }
 
 header {
         background: #fff;
     } 
-
-
 
 .head_text {
     color: white;
