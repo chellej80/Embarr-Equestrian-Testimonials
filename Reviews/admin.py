@@ -13,12 +13,12 @@ admin.site.register(Post, PostAdmin)
 #@admin.register(Comment)
 
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ('body', 'post', 'created_on', 'approved', 'active')
+    list_display = ('body', 'post', 'created_on','active','approved')
     list_filter = ('approved', 'created_on')
     search_fields = ('name','body')
     actions = ['approve_comments']
 
     def approve_comments(self, request, queryset):
-        queryset.update(active=True)
+        queryset.update(approved=True)
 
 admin.site.register(Comment, CommentAdmin)

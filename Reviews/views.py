@@ -10,6 +10,7 @@ from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 from django.shortcuts import(render, get_object_or_404, reverse, redirect, resolve_url)
 from django.http import HttpResponseRedirect
+from django.db.models import Q
 
 
 
@@ -92,27 +93,33 @@ def post_detail(request, slug):
         },
     )
 """
-def search_post(request):
-    form = searchForm()
-    q = ''
-    results =[]
 
-    if 'q' in request.GET:
-        form = searchForm(request.GET)
-        if form.is_valid():
-            q = form.cleaned_data['q']
-            results = Post.objects.filter(title=q)
+def search(request):
+    """
+    search results
+    """
+    queryset = Post.objects.all()
+    if request.method == "POST":
+        searched = request.POST["searched"]
+        results = Post.objects.filter(
+                Q(title__contains=searched) 
+                
+            ).distinct()
+        context = {
+               'queryset': queryset
+        }
 
-    return render(request, 'search.html',
-                    {'form':form,
-                        'q':q, 
-                        'results': results})
+        return render(request, 'search.html', {
+            'results': results, 'searched': searched})
+    else:
+
+        return render(request, 'search.html', context)
+
+
 
 @login_required
 def profile_view(request):
-    """
-    Renders the profile page
-    """
+    
     if request.method == 'POST':
         user_form = UserUpdateForm(request.POST, instance=request.user)
         #profile_form = ProfileUpdateForm(

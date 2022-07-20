@@ -1,9 +1,21 @@
 <!-- Sidebar Widgets Column -->
 <div class="col-md-4 float-right ">
   <div class="card my-4">
+       
           <h5 class="card-header">About Us</h5>
+            <hr>
+          <div class="container h-100">
+            <div class="row align-items-center h-100">
+                <form action="{% url 'search' %}" method="POST" class="d-flex mx-auto col-md-8">
+                    {% csrf_token %}
+                    <input class="form-control me-2" type="search" name="searched" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+        </div>
       <div class="card-body">
           <p class="card-text"> Embarr Equestrian</p>
+
           <a href="#"
              class="btn btn-primary">Know more!</a>
       </div>
