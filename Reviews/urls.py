@@ -1,5 +1,6 @@
 from . import views
 from django.urls import path, include
+#from .views import CommentDeleteView
 
 
 urlpatterns = [
@@ -7,4 +8,8 @@ urlpatterns = [
     #path('<slug:slug>/', views.PostDetail.as_view(), name='post_detail'),
     path('<slug:slug>/', views.post_detail, name='post_detail'),
     path("accounts/", include("allauth.urls")),
+    #path('post/edit/<int:pk>/', views.PostEditView.as_view(), name='post_edit'),
+    #path('post/delete/<int:pk>/', views.PostDeleteView.as_view(), name='post_delete'),
+    #path('post/<int:post_pk>/comment/delete/<int:pk>/', views.commentDeleteView.as_view(), name='post_delete'),
+    #path('blog/<slug:slug>/delete_comment/',views.PostCommentDeleteView.as_view(), name='post_delete'),
 ]

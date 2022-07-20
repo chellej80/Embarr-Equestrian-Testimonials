@@ -23,13 +23,18 @@
             <span class=" text-muted font-weight-normal">
               {{ comment.created_on }}
             </span>
-            <p>{{ comment.rating }} Stars</p>
           </p>
+          
           {{ comment.body | linebreaks }}
-        </div>
-        {% endfor %}
-      </div>
+          
+          <p>{{ user.username }}</p>
+          <p>---------------------------------</p>
+          </div>
+          {% endfor %}
+       </div>
     </div>
+
+
     <div class="col-md-8 card mb-4  mt-3 ">
       <div class="card-body">
         {% if new_comment %}
