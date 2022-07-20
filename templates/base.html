@@ -19,7 +19,7 @@
     </head>
 
     <body>
-        <!-- SEARCH BOX SECTION -->
+        
  
         <!-- Navigation -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
@@ -42,7 +42,7 @@
                         </li>
                         <li class="nav-item text-black">
                             <a class="nav-link text-black font-weight-bold" href="{% url 'profile' %}">
-                            <p><i class="fa fa-user" aria-hidden="true"></i> {{ user.username | slice:":10" }}</p></a></li>
+                            <p>{{ user.username | slice:":10" }} <i class="fa fa-user" aria-hidden="true"></i></p></a></li>
                         {% else %}
                         <li class="nav-item text-black">
                             <a class="nav-link text-black font-weight-bold" href="{% url 'account_signup' %}">Register</a>
