@@ -5,12 +5,16 @@ body {
     background-color:#fff;
     }
 
+.row {
+    margin-top: 15px;
+}
+
 .masthead {
         margin-top: 20px;
         overflow: hidden;
         position: relative;
         display: inline-block;
-        height: 20vh;
+        height: 25vh;
         width: 100%;
         background:#698bb0;
     }

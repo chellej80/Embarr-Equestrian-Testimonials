@@ -6,21 +6,15 @@
 
 <!-- PROFILE SECTION -->
 <section id="profile">
-    <h2 class="title">Profile Info</h2>
+   <!--<h2 class="title">Profile Info</h2>-->
     <div class="container">
         <div class="row">
-            <div class="col-md-6">
-                {% if user.profile.image %}
-                <img class="author-img" src="{{ user.profile.image.url }}" alt="User Image">
-                {% else %}
-                <img class="author-img" src="{% static 'images/small-img/user_profile_placeholder.jpg' %}"
-                    alt="User Image">
-                {% endif %}
-            </div>
+        
             <div class="user-info-box col-md-6">
+                
                 <h3>Username: {{ user.username | slice:":15" }}</h3>
                 <h3>Email: {{ user.email }}</h3>
-                <h3>Time Logged: {{ user.last_login | timesince }}</h3>
+                
                 {% if user.is_superuser %}
                 <h3>Status: Superuser</h3>
                 {% else %}
@@ -28,7 +22,7 @@
                 {% endif %}
             </div>
         </div>
-    </div>
+
     <form class="update-profile form-control mt-5 box-shadow" id="signup_form" method="post"
         action="{% url 'profile' %}" enctype="multipart/form-data">
         {% csrf_token %}

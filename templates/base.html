@@ -24,7 +24,7 @@
         <!-- Navigation -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
             <div class="container-fluid">
-                <a class="navbar-brand" href="{% url 'home' %}">Embarr Equestrian Testimonials</a>
+                <a class="navbar-brand" href="{% url 'home' %}"><i class="fas fa-horse-head"></i> Embarr Equestrian</a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
                     aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,12 +36,13 @@
                             <a class="nav-link active text-black font-weight-bold" href="{% url 'home' %}">Home</a>
                         </li>
                         {% if user.is_authenticated %}
-                        <li class="nav-item text-black">
-                            <a class="nav-link text-black font-weight-bold" href="{% url 'profile' %}">
-                            <p><i class="fa fa-user" aria-hidden="true"></i>{{ user.username | slice:":10" }}</p></a></li>
+                        
                         <li class="nav-item text-black">
                             <a class="nav-link text-black font-weight-bold" href="{% url 'account_logout' %}">Logout</a>
                         </li>
+                        <li class="nav-item text-black">
+                            <a class="nav-link text-black font-weight-bold" href="{% url 'profile' %}">
+                            <p><i class="fa fa-user" aria-hidden="true"></i> {{ user.username | slice:":10" }}</p></a></li>
                         {% else %}
                         <li class="nav-item text-black">
                             <a class="nav-link text-black font-weight-bold" href="{% url 'account_signup' %}">Register</a>
