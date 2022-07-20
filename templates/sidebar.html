@@ -1,30 +1,31 @@
 <!-- Sidebar Widgets Column -->
 <div class="col-md-4 float-right ">
   <div class="card my-4">
-       
+
           <h5 class="card-header">About Us</h5>
-            <hr>
-          <div class="container h-100">
-            <div class="row align-items-center h-100">
+          <!--<div class="container w-100">
+            <div class="row align-items-center">-->
                 <form action="{% url 'search' %}" method="POST" class="d-flex mx-auto col-md-8">
                     {% csrf_token %}
                     <input class="form-control me-2" type="search" name="searched" placeholder="Search" aria-label="Search">
                     <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
                 </form>
-            </div>
-        </div>
+    
+        
+           
+          
       <div class="card-body">
-          <p class="card-text"> Embarr Equestrian</p>
+          <p class="card-text"> Embarr Equestrian: "Horses are not just a business for us, they are our passion"</p>
+          <p>Now established as one of the most successful Livery and Equine Coaching centres in the country,
+            Embarr Equestrian in Co. Meath, Ireland is set on 120 acres of rolling parkland.<br><br>Owned by the Jordan family, 
+            the name is inspired by the mythical horse named "Embarr" a Gaelic word that means "imagination." <br>
+            In mythology, this is the name of the heroine Niamh's magical 
+            horse that could cross the sea and land without touching the water or the ground.</p>
+          <p><a href="#"
+             class="btn btn-primary">Know more!</a></p>
 
-          <a href="#"
-             class="btn btn-primary">Know more!</a>
+             
+        </div>
       </div>
   </div>
-  </div>
   
-
-
-
-               
-    
-    

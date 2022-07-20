@@ -10,7 +10,7 @@ body {
         overflow: hidden;
         position: relative;
         display: inline-block;
-        height: 33vh;
+        height: 20vh;
         width: 100%;
         background:#698bb0;
     }
@@ -39,5 +39,5 @@ header {
 .btn-danger {
     color: #fff;
     background-color: blue;
-    border-color: #dc281e;
+    
     }

@@ -102,8 +102,7 @@ def search(request):
     if request.method == "POST":
         searched = request.POST["searched"]
         results = Post.objects.filter(
-                Q(title__contains=searched) 
-                
+                Q(title__contains=searched)  
             ).distinct()
         context = {
                'queryset': queryset

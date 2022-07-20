@@ -7,14 +7,19 @@
         <div class="overlay"></div>
         <div class="container">
             <div class="row">
-                <div class="col-md-8 col-md-12 mx-auto">
+                <div class="col-md-8 col-md-16 mx-auto">
                     <div class="site-heading">
-                             <h3 class="site-heading my-4 mt-3 text-grey"> Welcome to the Testimonial Page - Please log in to submit a review of our services</h3>
-                            <p class="text-grey">Embark on a Journey of Discovery &nbsp</p>
-                            <!-- <div id="search-box">
-                   <div class="search-nav"></div>  
-                    
-                    </div>-->
+                             <h3 class="site-heading my-8 mt-3 text-grey align-items-center"> Welcome to Embarr Equestrian Services</h3>
+                            
+                            <div class="container h-100">
+                                <div class="row align-items-center">
+                                    <form action="{% url 'search' %}" method="POST" class="d-flex mx-auto col-md-8">
+                                        {% csrf_token %}
+                                        <input class="form-control me-2" type="search" name="searched" placeholder="Search" aria-label="Search">
+                                        <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
+                                    </form>
+                                </div>
+                            </div>
                     
                     </div>
                     
