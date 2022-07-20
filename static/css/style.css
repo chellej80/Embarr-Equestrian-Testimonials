@@ -2,8 +2,24 @@
 body {
     font-family: "Roboto", sans-serif;
     font-size: 18px;
-    background-color: white;
+    background-color:#fff;
     }
+
+.masthead {
+        margin-top: 20px;
+        overflow: hidden;
+        position: relative;
+        display: inline-block;
+        height: 33vh;
+        width: 100%;
+        background:#445261;
+    }
+
+header {
+        background: #fff;
+    } 
+
+
 
 .head_text {
     color: white;
@@ -27,53 +43,3 @@ body {
     background-color: blue;
     border-color: #dc281e;
     }
-
-/*.masthead {
-    color: #445261;
-    height: auto;
-    padding-bottom: 15px;
-    box-shadow: 0 16px 48px #E3E7EB;
-     padding-top: 10px;
-    }*/
-
-header {
-    background: #445261;
-} 
-
-.masthead {
-        margin-top: 20px;
-        overflow: hidden;
-        position: relative;
-        display: inline-block;
-        height: 33vh;
-        width: 100%;
-        background: #445261;
-    }
-    
-/*.masthead-text {
-        background-color: #445261;
-        color: white;
-        position: relative;
-    }
-    
-.masthead-image {
-        position: relative;
-        overflow: hidden;
-    }
-    
-.masthead-image {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 90%;
-        height: 100%;
-        width: 150%;
-        background: #445261;
-        -webkit-transform: skew(15deg);
-        -moz-transform: skew(15deg);
-        transform: skew(15deg);
-        z-index: 100;
-    }*/
-
-
-    
