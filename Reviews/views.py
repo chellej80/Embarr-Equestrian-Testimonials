@@ -2,9 +2,9 @@ from .models import *
 from .forms import CommentForm, searchForm, UserUpdateForm
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
-from django.views.generic.edit import DeleteView
+from django.views.generic import UpdateView
 from django.urls import reverse_lazy
-from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
@@ -137,4 +137,25 @@ def profile_view(request):
         #'profile_form': profile_form,
     }
     return render(request, 'profile.html', context)
+
+@login_required
+def delete_comment(request, comment_id):
+    """
+    Function to Delete comment
+    """
+    comment = get_object_or_404(Comment, id=comment_id)
+    comment.delete()
+    messages.success(request, 'Your comment was deleted successfully')
+    return HttpResponseRedirect(reverse(
+        'post_detail', args=[comment.post.slug]))
+
+
+class EditComment(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
+    """
+    Edit comment
+    """
+    model = Comment
+    template_name = 'edit_comment.html'
+    form_class = CommentForm
+    success_message = 'Your comment was updated'
     
