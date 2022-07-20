@@ -21,7 +21,7 @@ class UserProfile(models.Model):
     Model for user profile
     """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    bio = models.CharField(max_length=500, null=True)
+    #bio = models.CharField(max_length=500, null=True)
     first_name = models.CharField(max_length=200, null=True)
     last_name = models.CharField(max_length=200, null=True)
    
