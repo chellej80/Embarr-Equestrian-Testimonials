@@ -1,5 +1,6 @@
 from django import forms
-from .models import Comment
+from .models import Comment, Profile
+from django.contrib.auth.models import User
 
 
 class CommentForm(forms.ModelForm):
@@ -9,3 +10,14 @@ class CommentForm(forms.ModelForm):
 
 class searchForm(forms.Form):
     q = forms.CharField()
+
+class UserUpdateForm(forms.ModelForm):
+    """
+    Form for profile name update
+    """
+    email = forms.EmailField()
+
+    class Meta:
+        model = User
+        fields = ['username', 'email']
+

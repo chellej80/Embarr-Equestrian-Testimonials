@@ -1,13 +1,30 @@
 from django.db import models
+from django.contrib.auth import get_user_model
 from django.contrib.auth.models import User
-from django.dispatch import receiver #add this
-from django.db.models.signals import post_save #add this
+from django.urls import reverse
+
+#from django.dispatch import receiver #add this
+#from django.db.models.signals import post_save #add this
 
 # Create your models here.
+
+
 STATUS = (
     (0,"Draft"),
     (1,"Publish")
 )
+
+User = get_user_model()
+
+class UserProfile(models.Model):
+    """
+    Model for user profile
+    """
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    
+
+    def __str__(self):
+        return f'{self.user.username} Profile'
 
 class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)
@@ -52,7 +69,16 @@ class Comment(models.Model):
 
     def __str__(self):
         return 'Comment {} by {}'.format(self.body, self.name)
+    
+    def get_absolute_url(self):
+        """Sets absolute URL"""
+        return reverse('post_detail', args=[self.post.slug])
 
-class Profile(models.Model):   #add this class and the following fields
-	user = models.OneToOneField(User, on_delete=models.CASCADE)
-	#products = models.ManyToManyField(Product)
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    
+    #avatar = models.ImageField(default='default.jpg', upload_to='profile_images')
+    #bio = models.TextField()
+
+    def __str__(self):
+        return self.user.username

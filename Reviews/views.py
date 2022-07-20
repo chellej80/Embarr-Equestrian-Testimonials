@@ -1,10 +1,15 @@
-from .models import Post, Comment
-from .forms import CommentForm, searchForm
+from .models import *
+from .forms import CommentForm, searchForm, UserUpdateForm
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
 from django.views.generic.edit import DeleteView
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.contrib.auth.decorators import login_required
+from django.contrib import messages
+from django.contrib.messages.views import SuccessMessageMixin
+from django.shortcuts import(render, get_object_or_404, reverse, redirect, resolve_url)
+from django.http import HttpResponseRedirect
 
 
 
@@ -13,10 +18,9 @@ class PostList(generic.ListView):
     template_name = 'index.html'
     paginate_by = 2
 
-#class PostDetail(View):
 
 def post_detail(request, slug):
-    #template_name = 'post_detail.html'
+    template_name = 'post_detail.html'
     post = get_object_or_404(Post, slug=slug)
     comments = post.comments.filter(active=True)
     new_comment = None
@@ -47,23 +51,6 @@ def post_detail(request, slug):
     )
 
 
-class PostCommentDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
-    model = Comment
-    template_name = 'confirm_delete.html'  # <app>/<model>_<viewtype>.html
-
-    def test_func(self):
-        comment = self.get_object()
-        if self.request.user == comment.user:
-            return True
-        return False
-
-    def form_invalid(self, form):
-        return HttpResponseRedirect(self.get_success_url())
-
-    def get_success_url(self):
-        return reverse('post_detail', kwargs=dict(slug=self.kwargs['slug']))
-
-
 def search_post(request):
     form = searchForm()
     q = ''
@@ -79,3 +66,28 @@ def search_post(request):
                     {'form':form,
                      'q':q, 
                      'results': results})
+
+@login_required
+def profile_view(request):
+    """
+    Renders the profile page
+    """
+    if request.method == 'POST':
+        user_form = UserUpdateForm(request.POST, instance=request.user)
+        #profile_form = ProfileUpdateForm(
+            #request.POST, request.FILES, instance=request.user.profile)
+        if user_form.is_valid():
+            user_form.save()
+            #profile_form.save()
+            messages.success(request, 'Your account has been updated!')
+            return redirect('profile')
+    else:
+        user_form = UserUpdateForm(instance=request.user)
+        #profile_form = ProfileUpdateForm(instance=request.user.profile)
+
+    context = {
+        'user_form': user_form,
+        #'profile_form': profile_form,
+    }
+    return render(request, 'profile.html', context)
+    

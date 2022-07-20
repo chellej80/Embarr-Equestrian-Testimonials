@@ -35,8 +35,8 @@
                                 <h2 class="card-title">{{ post.title }}</h2></p>
                         </div>
                         
-                        <!--<p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} </p>-->
-                        <p class="card-text">{{post.content|slice:":200" }}</p>
+                        <!--<p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} </p>
+                        <p class="card-text">{{post.content|slice:":200" }}</p>-->
                         <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Click here to Review &rarr;</a>
                     </div>
                     

@@ -33,9 +33,9 @@
                             <a class="nav-link active text-black font-weight-bold" href="{% url 'home' %}">Home</a>
                         </li>
                         {% if user.is_authenticated %}
-                        <!--<li class="nav-item text-black">
-                            <a class="text-black font-weight-bold" href="{% url 'user' %}">{{user.username|title}}</a>
-                            </li>-->
+                        <li class="nav-item text-black">
+                            <a class="nav-link text-black font-weight-bold" href="{% url 'profile' %}">
+                            <p><i class="fa fa-user" aria-hidden="true"></i>{{ user.username | slice:":10" }}</p></a></li>
                         <li class="nav-item text-black">
                             <a class="nav-link text-black font-weight-bold" href="{% url 'account_logout' %}">Logout</a>
                         </li>
@@ -52,7 +52,19 @@
                 </div>
             </div>
         </nav>
-        
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    {% for message in messages %}
+                    <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
+                        {{ message | safe }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
         {% block content %}
         <!-- Content Goes here -->
         {% endblock content %}
@@ -66,7 +78,13 @@
                 <i class="fab fa-youtube-square ms-3"></i></p>
                     
             </footer>
-       
+            <script>
+                setTimeout(function () {
+                    let messages = document.getElementById('msg');
+                    let alert = new bootstrap.Alert(messages);
+                    alert.close();
+                }, 2500);
+            </script>
     
         </body>
     </html>
