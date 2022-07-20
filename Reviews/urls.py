@@ -8,6 +8,7 @@ urlpatterns = [
     #path('<slug:slug>/', views.PostDetail.as_view(), name='post_detail'),
     path('search/',views.search_post, name='search'),
     path('accounts/', include('allauth.urls')),
+    #path('user/', views.profile, name= 'user'),
     path('<slug:slug>/', views.post_detail, name='post_detail'),
     
     #path('post/edit/<int:pk>/', views.PostEditView.as_view(), name='post_edit'),

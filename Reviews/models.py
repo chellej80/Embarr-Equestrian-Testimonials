@@ -55,4 +55,4 @@ class Comment(models.Model):
 
 class Profile(models.Model):   #add this class and the following fields
 	user = models.OneToOneField(User, on_delete=models.CASCADE)
-	products = models.ManyToManyField(Product)
+	#products = models.ManyToManyField(Product)
