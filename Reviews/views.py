@@ -13,12 +13,54 @@ from django.http import HttpResponseRedirect
 
 
 
+
 class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = 'index.html'
     paginate_by = 2
 
+class PostDetail(View):
 
+    def get(self, request, slug, *args, **kwargs):
+        queryset = Post.objects.filter(status=1)
+        post = get_object_or_404(queryset, slug=slug)
+        comments = post.comments.filter(approved=True).order_by("-created_on")
+
+        return render(
+            request,
+            "post_detail.html",
+            {
+                "post": post,
+                "comments": comments,
+            
+            },
+        )
+    
+    def post(self, request, slug, *args, **kwargs):
+
+        queryset = Post.objects.filter(status=1)
+        post = get_object_or_404(queryset, slug=slug)
+        comments = post.comments.filter(approved=True).order_by("-created_on")
+        comment_form = CommentForm(data=request.POST)
+        new_comment = None
+        # Comment posted
+        if comment_form.is_valid():
+
+            # Create Comment object but don't save to database yet
+            new_comment = comment_form.save(commit=False)
+            # Assign the current post to the comment
+            new_comment.post = post
+            # Save the comment to the database
+            new_comment.save()
+        else:
+            comment_form = CommentForm()
+
+        return render(request, 'post_detail.html', 
+                        {'post': post,
+                        'comments': comments,
+                        'comment_form': comment_form,
+                        'new_comment': new_comment})
+"""
 def post_detail(request, slug):
     template_name = 'post_detail.html'
     post = get_object_or_404(Post, slug=slug)
@@ -49,8 +91,7 @@ def post_detail(request, slug):
             'comment_form': comment_form
         },
     )
-
-
+"""
 def search_post(request):
     form = searchForm()
     q = ''
@@ -61,11 +102,11 @@ def search_post(request):
         if form.is_valid():
             q = form.cleaned_data['q']
             results = Post.objects.filter(title=q)
-    
+
     return render(request, 'search.html',
                     {'form':form,
-                     'q':q, 
-                     'results': results})
+                        'q':q, 
+                        'results': results})
 
 @login_required
 def profile_view(request):

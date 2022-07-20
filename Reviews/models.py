@@ -61,7 +61,7 @@ class Comment(models.Model):
     body = models.TextField()
     rating = models.IntegerField(choices=RATING_CHOICES, default='5')
     created_on = models.DateTimeField(auto_now_add=True)
-    active = models.BooleanField(default=False)
+    approved = models.BooleanField(default=False)
     
     
     class Meta:
@@ -74,11 +74,3 @@ class Comment(models.Model):
         """Sets absolute URL"""
         return reverse('post_detail', args=[self.post.slug])
 
-class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    
-    #avatar = models.ImageField(default='default.jpg', upload_to='profile_images')
-    #bio = models.TextField()
-
-    def __str__(self):
-        return self.user.username

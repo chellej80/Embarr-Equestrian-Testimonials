@@ -1,5 +1,5 @@
 from django import forms
-from .models import Comment, Profile
+from .models import Comment, UserProfile
 from django.contrib.auth.models import User
 
 
