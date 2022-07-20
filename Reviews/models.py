@@ -21,6 +21,10 @@ class UserProfile(models.Model):
     Model for user profile
     """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    bio = models.CharField(max_length=500, null=True)
+    first_name = models.CharField(max_length=200, null=True)
+    last_name = models.CharField(max_length=200, null=True)
+
     
 
     def __str__(self):
@@ -46,11 +50,11 @@ class Post(models.Model):
 class Comment(models.Model):
 
     RATING_CHOICES = (
-        (1, '1'),
-        (2, '2'),
-        (3, '3'),
-        (4, '4'),
-        (5, '5'),
+        (1, '1 *'),
+        (2, '2 *'),
+        (3, '3 *'),
+        (4, '4 *'),
+        (5, '5 *'),
     )
 
     
