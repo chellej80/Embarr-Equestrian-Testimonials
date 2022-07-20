@@ -62,6 +62,7 @@ class Comment(models.Model):
     rating = models.IntegerField(choices=RATING_CHOICES, default='5')
     created_on = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
+    active = models.BooleanField(default=False)
     
     
     class Meta:
