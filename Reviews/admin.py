@@ -1,5 +1,7 @@
 from django.contrib import admin
 from .models import Post, Comment
+from django import forms
+from django.contrib.auth.models import User
 
 
 class PostAdmin(admin.ModelAdmin):

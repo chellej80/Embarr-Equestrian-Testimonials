@@ -9,5 +9,16 @@ class CommentForm(forms.ModelForm):
         fields = ('rating', 'name', 'location', 'body')
 
 
+class UserUpdateForm(forms.ModelForm):
+    """
+    Form for profile name update
+    """
+    email = forms.EmailField()
+
+    class Meta:
+        model = User
+        fields = ['username', 'email', 'first_name', 'last_name']
+
+
 class searchForm(forms.Form):
     q = forms.CharField()
