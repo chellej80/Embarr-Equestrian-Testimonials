@@ -20,7 +20,7 @@ class UserProfile(models.Model):
     Model for user profile
     """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    # bio = models.CharField(max_length=500, null=True)
+    bio = models.CharField(max_length=500, null=True)
     first_name = models.CharField(max_length=200, null=True)
     last_name = models.CharField(max_length=200, null=True)
 
@@ -47,11 +47,11 @@ class Post(models.Model):
 class Comment(models.Model):
 
     RATING_CHOICES = (
-        (1, '1 *'),
-        (2, '2 *'),
-        (3, '3 *'),
-        (4, '4 *'),
-        (5, '5 *'),
+        (1, '1 Star'),
+        (2, '2 Stars'),
+        (3, '3 Stars'),
+        (4, '4 Stars'),
+        (5, '5 Stars'),
     )
 
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
@@ -59,7 +59,7 @@ class Comment(models.Model):
     location = models.CharField(max_length=80, default='e.g Dublin')
     email = models.EmailField()
     body = models.TextField()
-    rating = models.IntegerField(choices=RATING_CHOICES, default='5')
+    rating = models.IntegerField(choices=RATING_CHOICES, default='5 stars')
     created_on = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
     active = models.BooleanField(default=False)

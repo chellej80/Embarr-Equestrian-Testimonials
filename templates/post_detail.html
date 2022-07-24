@@ -48,7 +48,8 @@
             {{ comment.created_on }}
           </span>
         </p>
-          
+        {{ comment.rating | linebreaks }}
+
         {{ comment.body | linebreaks }}
           
         <p>{{ user.username }}</p>
