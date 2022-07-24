@@ -3,16 +3,16 @@
 {% block content %}
 
     <!-- UPDATE COMMENT SECTION -->
-    <div class="edit-comments container box-shadow">
+    <div class="container shadow-lg p-3 mb-5 bg-body rounded">
         <div class="row">
-            <div class="col-12 text-center">
+            <div class="col-md-8 mt-3 offset-md-2">
                 <h1 class="title">Edit Comment</h1>
                 <p>Edit comment as: {{ user.username | slice:":10" }}</p>
                 
                 <form method="post" enctype="multipart/form-data">
                     {% csrf_token %}
                     {{ form.as_p }}
-                    <button class="btn btn-secondary right mb-4" type="submit" value="Save">Submit</button>
+                    <button class="btn btn-primary  btn-md" type="submit" value="Save">Submit</button>
                 </form>
             </div>
         </div>
