@@ -61,11 +61,9 @@
 
         {{ comment.body | linebreaks }}
           
-        <p>{{ user.username }}</p>
-
-     
+        
           
-        {% if user.is_authenticated and user.username == user.username %}
+        {% if user.is_authenticated and user.username == comment.name %}
         <a href="{% url 'edit_comment' comment.id %}" aria-label="Go to the Edit Comments Page">Edit <i class="fa-solid fa-comment-pen"></i></a>
           <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#delete-comment"><i class="fas fa-trash"></i></button>
           <!--Delete comment bootstrap modal-->

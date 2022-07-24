@@ -43,16 +43,22 @@ class PostDetail(View):
         post = get_object_or_404(queryset, slug=slug)
         comments = post.comments.filter(approved=True).order_by("-created_on")
         comment_form = CommentForm(data=request.POST)
+       
         new_comment = None
+
         # Comment posted
         if comment_form.is_valid():
+
+            comment_form.instance.name = request.user.username
 
             # Create Comment object but don't save to database yet
             new_comment = comment_form.save(commit=False)
             # Assign the current post to the comment
             new_comment.post = post
+            
             # Save the comment to the database
             new_comment.save()
+           
         else:
             comment_form = CommentForm()
 
@@ -113,6 +119,7 @@ def delete_comment(request, comment_id):
     Function to Delete comment
     """
     comment = get_object_or_404(Comment, id=comment_id)
+    comment.name = user.username
     comment.delete()
     messages.success(request, 'Your comment was deleted successfully')
     return HttpResponseRedirect(reverse(
