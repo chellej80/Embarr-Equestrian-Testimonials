@@ -13,56 +13,6 @@
 
     <div class="col-md-8 card mb-4  mt-3 ">
       <div class="card-body">
-        <!-- comments -->
-        <h2>{{ comments.count }} Reviews</h2>
-
-        {% for comment in comments %}
-        
-        <div class="comments" style="padding: 10px;">
-          <p class="font-weight-bold">
-            {{ comment.name }} |
-            <span class=" text-muted font-weight-normal">
-              {{ comment.created_on }}
-            </span>
-          </p>
-          
-          {{ comment.body | linebreaks }}
-          
-          <p>{{ user.username }}</p>
-          
-          {% if user.is_authenticated and user.username == user.username %}
-                   <a href="{% url 'edit_comment' comment.id %}" aria-label="Go to the Edit Comments Page">Edit <i class="fa-solid fa-comment-pen"></i></a>
-                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#delete-comment"><i class="fas fa-trash"></i></button>
-                    <!-- Delete comment bootstrap modal-->
-                    <div class="modal fade" id="delete-comment"
-                        tabindex="-1" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title"  id="staticBackdropLabel">Delete Comment</h5>
-                                </div>
-                                <div class="modal-body">
-                                    Are you sure you want to delete your comment?
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary"
-                                        data-bs-dismiss="modal">Close</button>
-                                    <a href="{% url 'delete_comment' comment.id %}" class="btn btn-danger" aria-label="Delete Comment">Delete</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {% endif %}
-                    <p>---------------------------------</p>
-          
-          </div>
-          {% endfor %}
-       </div>
-    </div>
-
-
-    <div class="col-md-8 card mb-4  mt-3 ">
-      <div class="card-body">
         {% if new_comment %}
         <div class="alert alert-success" role="alert">
           Your Review is awaiting moderation
@@ -80,6 +30,55 @@
         {% endif %}
       </div>
     </div>
+  </div>
+
+
+
+  <div class="col-md-8 card mb-4  mt-3 ">
+    <div class="card-body">
+        <!-- comments -->
+      <h2>{{ comments.count }} Reviews</h2>
+
+      {% for comment in comments %}
+        
+      <div class="comments" style="padding: 10px;">
+        <p class="font-weight-bold">
+          {{ comment.name }} |
+          <span class=" text-muted font-weight-normal">
+            {{ comment.created_on }}
+          </span>
+        </p>
+          
+        {{ comment.body | linebreaks }}
+          
+        <p>{{ user.username }}</p>
+          
+        {% if user.is_authenticated and user.username == user.username %}
+        <a href="{% url 'edit_comment' comment.id %}" aria-label="Go to the Edit Comments Page">Edit <i class="fa-solid fa-comment-pen"></i></a>
+          <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#delete-comment"><i class="fas fa-trash"></i></button>
+          <!--Delete comment bootstrap modal-->
+          <div class="modal fade" id="delete-comment"
+              tabindex="-1" aria-hidden="true">
+              <div class="modal-dialog">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <h5 class="modal-title"  id="staticBackdropLabel">Delete Comment</h5>
+                      </div>
+                      <div class="modal-body">
+                          Are you sure you want to delete your comment?
+                      </div>
+                      <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary"
+                              data-bs-dismiss="modal">Close</button>
+                          <a href="{% url 'delete_comment' comment.id %}" class="btn btn-danger" aria-label="Delete Comment">Delete</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          {% endif %}
+          <p>---------------------------------</p>
+    </div>
+ {% endfor %}
   </div>
 </div>
 {% endblock content %}
