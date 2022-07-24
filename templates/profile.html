@@ -10,7 +10,7 @@
     <div class="container">
         <div class="row">
         
-            <div class="user-info-box col-md-6">
+            <div class="user-info-box col-md-3 shadow-lg p-3 mb-5 bg-body rounded">
                 
                 <h3>Username: {{ user.username | slice:":15" }}</h3>
                 <h3>Email: {{ user.email }}</h3>
@@ -23,7 +23,7 @@
             </div>
         </div>
 
-    <form class="update-profile form-control mt-5 box-shadow" id="signup_form" method="post"
+    <form class="update-profile form-control shadow-lg p-3 mb-5 bg-body rounded" id="signup_form" method="post"
         action="{% url 'profile' %}" enctype="multipart/form-data">
         {% csrf_token %}
         {{ user_form | crispy }}
@@ -31,7 +31,8 @@
         {% if redirect_field_value %}
         <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
         {% endif %}
-        <button class="btn-sm btn-secondary mt-3 mb-3" type="submit">Update</button>
+        <br>
+        <button class="btn btn-primary  btn-md" type="submit">Update</button>
     </form>
 
     {% if user.is_superuser %}
