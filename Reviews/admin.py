@@ -14,9 +14,6 @@ class PostAdmin(SummernoteModelAdmin):
     summernote_fields = ('content',)
 
 
-#admin.site.register(Post, PostAdmin)
-
-
 class ReviewAdmin(admin.ModelAdmin):
     list_display = ('body', 'post', 'created_on', 'active', 'approved')
     list_filter = ('approved', 'created_on')

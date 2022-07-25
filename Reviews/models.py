@@ -3,7 +3,6 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.models import User
 from django.urls import reverse
 
-
 # Set post status
 
 
@@ -13,7 +12,8 @@ STATUS = (
 )
 
 
-# User = get_user_model()
+User = get_user_model()
+
 
 class UserProfile(models.Model):
     """
@@ -28,9 +28,13 @@ class UserProfile(models.Model):
 
 
 class Post(models.Model):
+    """
+    Model for the Service posts
+    """
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='test_posts')
+    author = models.ForeignKey(User, on_delete=models.CASCADE, 
+                               related_name='test_posts')
     updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
@@ -44,6 +48,9 @@ class Post(models.Model):
 
 
 class Review(models.Model):
+    """
+    Class review model that captures and saves the review in the DB
+    """
 
     RATING_CHOICES = (
         (1, '1 Star'),
@@ -53,7 +60,8 @@ class Review(models.Model):
         (5, '5 Stars'),
     )
 
-    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='reviews')
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, 
+                             related_name='reviews')
     name = models.CharField(max_length=80)
     location = models.CharField(max_length=80, default='e.g Dublin')
     email = models.EmailField()
@@ -68,8 +76,7 @@ class Review(models.Model):
 
     def __str__(self):
         return 'Review {} by {}'.format(self.body, self.name)
-    
+
     def get_absolute_url(self):
         """Sets absolute URL"""
         return reverse('post_detail', args=[self.post.slug])
-

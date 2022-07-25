@@ -1,4 +1,5 @@
-from .models import *
+from .models import Post, Review
+# from django.contrib.auth.models import User
 from .forms import ReviewForm, UserUpdateForm
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
@@ -8,17 +9,17 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
-from django.shortcuts import(render, get_object_or_404, reverse, redirect, resolve_url)
+from django.shortcuts import(render, get_object_or_404,  
+                             reverse, redirect, resolve_url)
 from django.http import HttpResponseRedirect
 from django.db.models import Q
-
-
 
 
 class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = 'index.html'
     paginate_by = 2
+
 
 class PostDetail(View):
 
@@ -50,12 +51,10 @@ class PostDetail(View):
         if review_form.is_valid():
 
             review_form.instance.name = request.user.username
-
             # Create Comment object but don't save to database yet
             new_review = review_form.save(commit=False)
             # Assign the current post to the comment
             new_review.post = post
-            
             # Save the comment to the database
             new_review.save()
            
@@ -63,10 +62,10 @@ class PostDetail(View):
             review_form = ReviewForm()
 
         return render(request, 'post_detail.html', 
-                        {'post': post,
-                        'reviews': reviews,
-                        'review_form': review_form,
-                        'new_review': new_review})
+                      {'post': post,
+                       'reviews': reviews,
+                       'review_form': review_form,
+                       'new_review': new_review})
 
 
 def search(request):
@@ -90,7 +89,6 @@ def search(request):
         return render(request, 'search.html', context)
 
 
-
 @login_required
 def profile_view(request):
     
@@ -109,13 +107,13 @@ def profile_view(request):
     }
     return render(request, 'profile.html', context)
 
+
 @login_required
 def delete_review(request, review_id):
     """
     Function to Delete comment
     """
     review = get_object_or_404(Review, id=review_id)
-    review.name = user.username
     review.delete()
     messages.success(request, 'Your Review was deleted successfully')
     return HttpResponseRedirect(reverse(
@@ -130,4 +128,3 @@ class EditReview(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     template_name = 'edit_review.html'
     form_class = ReviewForm
     success_message = 'Your Review was updated'
-    
