@@ -10,8 +10,8 @@
                 <div class="col-md-8 col-md-16 mx-auto">
                     <div class="site-heading">
                              <h3 class="site-heading my-8 mt-3 text-grey align-items-center"> Welcome to Embarr Equestrian Services | Please leave a Review</h3>
-                            <hr>
-                            <div class="container h-100">
+                             <hr>
+                             <div class="container h-100">
                                 <div class="row align-items-center">
                                     <form action="{% url 'search' %}" method="POST" class="d-flex mx-auto col-md-8">
                                         {% csrf_token %}
@@ -20,9 +20,7 @@
                                     </form>
                                 </div>
                             </div>
-                    
                     </div>
-                    
                 </div>
             </div>
         </div>
@@ -31,22 +29,18 @@
 
 <div class="container">
     <div class="row">
-        <!-- Blog Entries Column -->
+        <!-- Post Entries Column -->
         <div class="col-md-8 mt-3 left">
             {% for post in post_list %}
             <div class="card mb-4">
                 <div class="card-body">
                     <div class="image-container">
-                        
                         <img class="card-img-top"
                             src="https://res.cloudinary.com/chellej80/image/upload/v1657053329/horse_field_se4no3.jpg">
                             <div>
                             <p>
                                 <h2 class="card-title">{{ post.title }}</h2></p>
                         </div>
-                        
-                        <!--<p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} </p>
-                        <p class="card-text">{{post.content|slice:":200" }}</p>-->
                         <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Click here to Review &rarr;</a>
                     </div>
                     
@@ -58,7 +52,7 @@
     </div>
 </div>
 {% if is_paginated %}
-  <nav aria-label="Page navigation conatiner"></nav>
+  <nav aria-label="Page navigation container"></nav>
   <ul class="pagination justify-content-center">
     {% if page_obj.has_previous %}
     <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
