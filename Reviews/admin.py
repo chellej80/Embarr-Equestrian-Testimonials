@@ -1,30 +1,33 @@
 from django.contrib import admin
-from .models import Post, Comment
+from .models import Post, Review
 from django import forms
 from django.contrib.auth.models import User
+from django_summernote.admin import SummernoteModelAdmin
 
 
-class PostAdmin(admin.ModelAdmin):
+@admin.register(Post)
+class PostAdmin(SummernoteModelAdmin):
     list_display = ('title', 'slug', 'status', 'created_on')
     list_filter = ("status",)
     search_fields = ['title', 'content']
     prepopulated_fields = {'slug': ('title',)}
+    summernote_fields = ('content',)
 
 
-admin.site.register(Post, PostAdmin)
+#admin.site.register(Post, PostAdmin)
 
 
-class CommentAdmin(admin.ModelAdmin):
+class ReviewAdmin(admin.ModelAdmin):
     list_display = ('body', 'post', 'created_on', 'active', 'approved')
     list_filter = ('approved', 'created_on')
     search_fields = ('name', 'body')
-    actions = ['approve_comments']
+    actions = ['approve_reviews']
 
-    def approve_comments(self, request, queryset):
+    def approve_reviews(self, request, queryset):
         queryset.update(approved=True)
 
 
-admin.site.register(Comment, CommentAdmin)
+admin.site.register(Review, ReviewAdmin)
 
 
 class UserUpdateForm(forms.ModelForm):

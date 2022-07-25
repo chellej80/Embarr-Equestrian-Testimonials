@@ -1,11 +1,11 @@
 from django import forms
-from .models import Comment, UserProfile
+from .models import Review, UserProfile
 from django.contrib.auth.models import User
 
 
-class CommentForm(forms.ModelForm):
+class ReviewForm(forms.ModelForm):
     class Meta:
-        model = Comment
+        model = Review
         fields = ('rating', 'location', 'body')
 
 

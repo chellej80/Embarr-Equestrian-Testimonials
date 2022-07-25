@@ -43,7 +43,7 @@ class Post(models.Model):
         return self.title
 
 
-class Comment(models.Model):
+class Review(models.Model):
 
     RATING_CHOICES = (
         (1, '1 Star'),
@@ -53,8 +53,7 @@ class Comment(models.Model):
         (5, '5 Stars'),
     )
 
-    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
-    #username = models.CharField(User, max_length=20, default= 'Please Input your username for validation')
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='reviews')
     name = models.CharField(max_length=80)
     location = models.CharField(max_length=80, default='e.g Dublin')
     email = models.EmailField()
@@ -68,7 +67,7 @@ class Comment(models.Model):
         ordering = ['created_on']
 
     def __str__(self):
-        return 'Comment {} by {}'.format(self.body, self.name)
+        return 'Review {} by {}'.format(self.body, self.name)
     
     def get_absolute_url(self):
         """Sets absolute URL"""

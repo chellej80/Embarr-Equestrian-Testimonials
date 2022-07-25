@@ -1,5 +1,5 @@
 from .models import *
-from .forms import CommentForm, UserUpdateForm
+from .forms import ReviewForm, UserUpdateForm
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
 from django.views.generic import UpdateView
@@ -25,14 +25,14 @@ class PostDetail(View):
     def get(self, request, slug, *args, **kwargs):
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
-        comments = post.comments.filter(approved=True).order_by("-created_on")
+        reviews = post.reviews.filter(approved=True).order_by("-created_on")
 
         return render(
             request,
             "post_detail.html",
             {
                 "post": post,
-                "comments": comments,
+                "reviews": reviews,
             
             },
         )
@@ -41,32 +41,32 @@ class PostDetail(View):
 
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
-        comments = post.comments.filter(approved=True).order_by("-created_on")
-        comment_form = CommentForm(data=request.POST)
+        reviews = post.reviews.filter(approved=True).order_by("-created_on")
+        review_form = ReviewForm(data=request.POST)
        
-        new_comment = None
+        new_review = None
 
-        # Comment posted
-        if comment_form.is_valid():
+        # Review posted
+        if review_form.is_valid():
 
-            comment_form.instance.name = request.user.username
+            review_form.instance.name = request.user.username
 
             # Create Comment object but don't save to database yet
-            new_comment = comment_form.save(commit=False)
+            new_review = review_form.save(commit=False)
             # Assign the current post to the comment
-            new_comment.post = post
+            new_review.post = post
             
             # Save the comment to the database
-            new_comment.save()
+            new_review.save()
            
         else:
-            comment_form = CommentForm()
+            review_form = ReviewForm()
 
         return render(request, 'post_detail.html', 
                         {'post': post,
-                        'comments': comments,
-                        'comment_form': comment_form,
-                        'new_comment': new_comment})
+                        'reviews': reviews,
+                        'review_form': review_form,
+                        'new_review': new_review})
 
 
 def search(request):
@@ -96,42 +96,38 @@ def profile_view(request):
     
     if request.method == 'POST':
         user_form = UserUpdateForm(request.POST, instance=request.user)
-        #profile_form = ProfileUpdateForm(
-            #request.POST, request.FILES, instance=request.user.profile)
         if user_form.is_valid():
             user_form.save()
-            #profile_form.save()
             messages.success(request, 'Your account has been updated!')
             return redirect('profile')
     else:
         user_form = UserUpdateForm(instance=request.user)
-        #profile_form = ProfileUpdateForm(instance=request.user.profile)
-
+        
     context = {
         'user_form': user_form,
-        #'profile_form': profile_form,
+        
     }
     return render(request, 'profile.html', context)
 
 @login_required
-def delete_comment(request, comment_id):
+def delete_review(request, review_id):
     """
     Function to Delete comment
     """
-    comment = get_object_or_404(Comment, id=comment_id)
-    comment.name = user.username
-    comment.delete()
-    messages.success(request, 'Your comment was deleted successfully')
+    review = get_object_or_404(Review, id=review_id)
+    review.name = user.username
+    review.delete()
+    messages.success(request, 'Your Review was deleted successfully')
     return HttpResponseRedirect(reverse(
-        'post_detail', args=[comment.post.slug]))
+        'post_detail', args=[review.post.slug]))
 
 
-class EditComment(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
+class EditReview(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     """
-    Edit comment
+    Edit Review
     """
-    model = Comment
-    template_name = 'edit_comment.html'
-    form_class = CommentForm
-    success_message = 'Your comment was updated'
+    model = Review
+    template_name = 'edit_review.html'
+    form_class = ReviewForm
+    success_message = 'Your Review was updated'
     
