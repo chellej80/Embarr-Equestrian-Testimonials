@@ -1,21 +1,13 @@
-{% extends 'base.html' %}
-{% load static %}
-{% block content %}
-
-    <!-- UPDATE COMMENT SECTION -->
-    <div class="container shadow-lg p-3 mb-5 bg-body rounded">
-        <div class="row">
-            <div class="col-md-8 mt-3 offset-md-2">
-                <h1 class="title">Edit Review</h1>
-                <p>Edit review as: {{ user.username | slice:":10" }}</p>
-                
-                <form method="post" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    {{ form.as_p }}
-                    <button class="btn btn-primary  btn-md" type="submit" value="Save">Submit</button>
-                </form>
-            </div>
-        </div>
+{% extends 'base.html' %} {% load static %} {% block content %}
+<!-- UPDATE COMMENT SECTION -->
+<div class="container shadow-lg p-3 mb-5 bg-body rounded">
+  <div class="row">
+    <div class="col-md-8 mt-3 offset-md-2">
+      <h1 class="title">Edit Review</h1>
+      <p>Edit review as: {{ user.username | slice:":10" }}</p>
+      <form method="post" enctype="multipart/form-data"> {% csrf_token %} {{ form.as_p }}
+        <button class="btn btn-primary  btn-md" type="submit" value="Save">Submit</button>
+      </form>
     </div>
-    
-    {% endblock content %}
+  </div>
+</div> {% endblock content %}
