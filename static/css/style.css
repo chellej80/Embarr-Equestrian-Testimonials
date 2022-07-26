@@ -63,3 +63,30 @@ header {
     background-color: blue;
     
     }
+
+    @media only screen and (min-width: 425px) and (max-width: 768px) {
+
+        .card-title {
+            font-size: 1.0em;
+            }
+
+        .btn-primary {
+
+            font-size: 0.75rem;
+        }
+    
+    }
+
+    @media only screen and (min-width: 280px) and (max-width: 425px) {
+
+        .card-title {
+            font-size: 0.75em;
+            }
+
+        .btn-primary {
+
+                font-size: 0.5rem;
+            }
+        
+    
+    }
