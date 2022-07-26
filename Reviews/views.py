@@ -1,7 +1,6 @@
 from .models import Post, Review
 # from django.contrib.auth.models import User
 from .forms import ReviewForm, UserUpdateForm
-from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
 from django.views.generic import UpdateView
 # from django.urls import reverse_lazy
@@ -9,8 +8,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
-from django.shortcuts import(render, get_object_or_404,  
-                             reverse, redirect, resolve_url)
+from django.shortcuts import (render, get_object_or_404,
+                              reverse, redirect)
 from django.http import HttpResponseRedirect
 from django.db.models import Q
 
@@ -57,7 +56,7 @@ class PostDetail(View):
             new_review.post = post
             # Save the comment to the database
             new_review.save()
-           
+          
         else:
             review_form = ReviewForm()
 

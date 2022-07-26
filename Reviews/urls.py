@@ -1,8 +1,6 @@
+"""url paths for Reviews App"""
 from django.urls import path, include
 from . import views
-
-
-"""url paths for Reviews App"""
 
 
 urlpatterns = [
