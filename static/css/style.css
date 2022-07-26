@@ -32,6 +32,11 @@ header {
     box-shadow: 0 16px 48px #E3E7EB;
     }
 
+
+.card-title {
+    font-size: 1.5em;
+    }
+
 .image-container {
     position: relative;
 }
