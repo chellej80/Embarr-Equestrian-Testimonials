@@ -26,11 +26,11 @@
       <div class="col-md-8 mt-3 left"> {% for post in post_list %} <div class="card mb-4">
           <div class="card-body">
             <div class="image-container">
+              <div class="top-left">
+              <h2 class="card-title">{{ post.title }}</h2>
+            </div>
               <img class="card-img-top" src="https://res.cloudinary.com/chellej80/image/upload/v1657053329/horse_field_se4no3.jpg" alt="Horse Head in Field">
-              <div>
-                <h2 class="card-title">{{ post.title }}</h2>
-              </div>
-              <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Click here to Review &rarr;</a>
+              <div class="bottom-left"><a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Click here to Review &rarr;</a></div>
             </div>
           </div>
         </div> {% endfor %} </div> {% block sidebar %} {% include 'sidebar.html' %} {% endblock sidebar %}

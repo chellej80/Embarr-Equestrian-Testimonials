@@ -14,7 +14,7 @@ body {
         background:#698bb0;
     }
 
-    .row {
+.row {
         margin-top: 15px;
         margin-bottom: 15px;
 
@@ -35,6 +35,18 @@ header {
 .image-container {
     position: relative;
 }
+
+.top-left {
+    position: absolute;
+    top: 10px;
+    left: 16px;
+  }
+
+  .bottom-left {
+    position: absolute;
+    bottom: 10px;
+    left: 16px;
+  }
 
             
 .shadow {
