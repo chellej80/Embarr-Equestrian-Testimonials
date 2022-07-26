@@ -54,11 +54,11 @@ class Review(models.Model):
     """
 
     RATING_CHOICES = (
-        (1, '1 Star'),
-        (2, '2 Stars'),
-        (3, '3 Stars'),
-        (4, '4 Stars'),
-        (5, '5 Stars'),
+        (1, '1'),
+        (2, '2'),
+        (3, '3'),
+        (4, '4'),
+        (5, '5'),
     )
 
     post = models.ForeignKey(Post, on_delete=models.CASCADE,

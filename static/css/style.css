@@ -64,6 +64,8 @@ header {
     
     }
 
+/* Media Queries */
+
     @media only screen and (min-width: 425px) and (max-width: 768px) {
 
         .card-title {
@@ -74,6 +76,8 @@ header {
 
             font-size: 0.75rem;
         }
+
+        
     
     }
 
@@ -89,4 +93,26 @@ header {
             }
         
     
+    }
+
+    @media only screen and (min-width: 525px) and (max-width: 768px) {
+    
+        .site-heading {
+
+            text-align: center;
+            font-size: 2.75vh;
+        
+        }
+
+    }
+
+    @media only screen and (min-width: 280px) and (max-width: 525px) {
+    
+        .site-heading {
+
+            text-align: center;
+            font-size: 2.0vh;
+        
+        }
+
     }
