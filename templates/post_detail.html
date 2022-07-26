@@ -1,94 +1,57 @@
-{% extends 'base.html' %} {% block content %}
-{% load crispy_forms_tags %}
-
-<div class = "container">
-  <div class = "row">
+{% extends 'base.html' %} {% block content %} {% load crispy_forms_tags %} 
+<div class="container">
+  <div class="row">
     <div class="col-md-8 card mb-4  mt-3">
       <div class="card-body">
         <h1>{% block title %} {{ post.title }} {% endblock title %}</h1>
         <p class="card-text ">{{ post.content | safe }}</p>
       </div>
-    </div>
-  
-
-
-    {% if user.is_authenticated %}
-    <div class="col-md-8 card mb-4  mt-3 ">
-      <div class="card-body">
-
-        {% if new_review %}
-        <div class="alert alert-success" role="alert">
-          Your Review is awaiting moderation
-        </div>
-
-        {% else %}
-       
-        <h3>Leave a Review</h3>
+    </div> {% if user.is_authenticated %} <div class="col-md-8 card mb-4  mt-3 ">
+      <div class="card-body"> {% if new_review %} <div class="alert alert-success" role="alert"> Your Review is awaiting moderation </div> {% else %} <h3>Leave a Review</h3>
         <p>Posting as: {{ user.username }}</p>
         <form method="post" style="margin-top: 1.3em;">
-          {{ review_form | crispy }}
-          {% csrf_token %}
-          <br>
+          {{ review_form | crispy }} {% csrf_token %} <br>
           <button type="submit" class="btn btn-primary  btn-lg">Submit</button>
-        </form>
-        
-        {% endif %}
-        {% endif %}
-        
+        </form> {% endif %} {% endif %}
       </div>
     </div>
-  
-
- 
-  <div class = "container">
-    <div class = "row">
-    <div class="col-md-8 card mb-4  mt-3">
-      <div class="card-body">
-        <!-- Reviews -->
-      <h2>{{ reviews.count }} Reviews</h2>
-
-      {% for review in reviews %}
-        
-      <div class="reviews" style="padding: 10px;">
-        <p class="font-weight-bold">
-          {{ review.name }} |
-          <span class=" text-muted font-weight-normal">
-            {{ review.created_on }}
-          </span>
-        </p>
-        {{ review.rating | linebreaks }}
-
-        {{ review.body | linebreaks }}
-          
-        
-          
-        {% if user.is_authenticated and user.username == review.name %}
-        <a href="{% url 'edit_review' review.id %}" aria-label="Go to the Edit Comments Page">Edit <i class="fa-solid fa-comment-pen"></i></a>
-          <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#delete-review"><i class="fas fa-trash"></i></button>
-          <!--Delete comment bootstrap modal-->
-          <div class="modal fade" id="delete-review"
-          tabindex="-1" aria-hidden="true">
-              <div class="modal-dialog">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 card mb-4  mt-3">
+          <div class="card-body">
+            <!-- Reviews -->
+            <h2>{{ reviews.count }} Reviews</h2> {% for review in reviews %} <div class="reviews" style="padding: 10px;">
+              <p class="font-weight-bold">
+                {{ review.name }} | <span class=" text-muted font-weight-normal">
+                  {{ review.created_on }}
+                </span>
+              </p>
+              {{ review.rating | linebreaks }}
+              {{ review.body | linebreaks }} {% if user.is_authenticated and user.username == review.name %} <a href="{% url 'edit_review' review.id %}" aria-label="Go to the Edit Comments Page">Edit <i class="fa-solid fa-comment-pen"></i>
+              </a>
+              <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#delete-review">
+                <i class="fas fa-trash"></i>
+              </button>
+              <!--Delete comment bootstrap modal-->
+              <div class="modal fade" id="delete-review" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog">
                   <div class="modal-content">
-                      <div class="modal-header">
-                          <h5 class="modal-title"  id="staticBackdropLabel">Delete Comment</h5>
-                      </div>
-                      <div class="modal-body">
-                          Are you sure you want to delete your review?
-                      </div>
-                      <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary"
-                              data-bs-dismiss="modal">Close</button>
-                          <a href="{% url 'delete_review' review.id %}" class="btn btn-danger" aria-label="Delete Review">Delete</a>
-                      </div>
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="staticBackdropLabel">Delete Comment</h5>
+                    </div>
+                    <div class="modal-body"> Are you sure you want to delete your review? </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <a href="{% url 'delete_review' review.id %}" class="btn btn-danger" aria-label="Delete Review">Delete</a>
+                    </div>
                   </div>
-              </div>
+                </div>
+              </div> {% endif %} <p>---------------------------------</p>
+            </div> {% endfor %}
           </div>
-          {% endif %}
-          <p>---------------------------------</p>
         </div>
- {% endfor %}
+      </div>
+    </div>
   </div>
-</div>
-
+</div> 
 {% endblock content %}
