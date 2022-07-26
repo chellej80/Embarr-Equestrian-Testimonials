@@ -1,33 +1,57 @@
-# Horse Hangman
+# Embarr Equestrian Testimonials
 
 
 ## Overview
 
-[Embarr Equestrian Testimonials](https://embarr-equestrian-testimonials.herokuapp.com/) is a site page that allows clients/ visitors to post a review/ testimonial on services provided by Embarr Equestrian.
+[Embarr Equestrian Testimonials](https://embarr-equestrian-testimonials.herokuapp.com/) is a service review site for an Equine Business (Embarr Equestian) that allows clients to post reviews of services specified on the site. This project is a Full Stack website built using the Django framework and deployed using Heroku.
 
 
-### The Site 
-
-
-
-<div><h2>
-Site Mockup
-</h2></div>
-
-
+## The Site Mockup
+<img src=media/images/Mock_up.jpg>
 
 ## User Experience
 
 Goals:
 
+* To attract new customers, 
+* Highlight the benefits of what the business has to offer, 
+* Provide service information,
+* Provide a great user experience on all mobile devices,
+* Be easy to navigate
+* Give clear calls to action
+* Build the brand image
+* Raise the conversion rate.
+
+As a website user, I can:
+
+1. Navigate around the site and easily view the desired content.
+2. View a list of Services.
+3. Search for services via the search bar tool.
+4. Click on a service post to read more.
+5. View the number of reviews posted on a service.
+6. Register as an account user.
+
+As logged in website user, I can:
+
+1. Log in as a user.
+2. Submit a review of a service.
+3. Edit/Delete my previous reviews.
+4. Manage my profile by updating my details.
+5. Logout from the website.
+
+As a website superuser, I can:
+
+1. Create and publish a new Service Post.
+2. Create draft service posts that can be reviewed and published at a later date.
+3. Create a new user.
+4. Delete user and reviews.
+5. Approve user's reviews.
 
 
-First Time User:
+## Agile Methodology
 
-
-Returning/ Regular Visitor: 
-
-## User Stories/ Agile Project 
+This project was managed using the Agile method. All user stories were captured and updated using Githubs Project functionality and can be reviewed [here](https://github.com/users/chellej80/projects/7).
+A list of the issues captured and progressed can be viewed [here](https://github.com/chellej80/Embarr-Equestrian-Testimonials/issues). 
 
 ## Flowchart/ Wireframe
 
@@ -35,12 +59,57 @@ Returning/ Regular Visitor:
 
 ## Database Entity Diagram
 
+<img src=media/images/DB_ER.jpg>
+
+
 
 ## Features 
 
+- __Navigation Bar__
+
+  Featured on all pages, the full responsive navigation bar includes links to the Home page and all sub pages - Login, Logout, Register, User Profile link and is identical in structure for each page to allow for easy navigation. When the user logs in, the username appears in lieu of the login option and this links to the user profile page, the register link is also replaced with the logout link. The navigation items are styled to transition to a hamburger menu when the site is reduced in size on a mobile device. This section will allow the user to easily navigate from page to page across all devices without having to revert back to the previous page via the ‘back’ button. 
+
+    <img src="media/images/Nav_1.jpg" width="400px">
+
+
+    <img src="media/images/Nav_2.jpg" width="400px">
+
+
+- __Logo__
+
+    The logo I created simply using a combination of text and a font awsome icon. The logo is a hyperlink that takes the user to the homepage.
+    
+    <img src="media/images/logo.jpg" width="100px">
+
+
+- __Login Page__
+
+- __Logout Page__
+
+- __Register Page__
+
+- __Profile Page__
+
+- __Search Bar__
+
+    The search bar allows a user to search for a service they would like to read about and leave a review
+
+    <img src="media/images/search_bar.jpg" width="300px">
+
+- __Service Pages__
+
+- __Post Service Detail Pages__
+
+- __Submit Review__
+
+- __Update/ Delete Review__
 
 
 ### Features Left to Implement
+
+- Contact Page
+- Service Categories
+
        
 
 ## Frameworks & Languages Used
