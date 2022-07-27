@@ -206,6 +206,8 @@ Python Code inspired and adapted from the following tutorials and sources:
 
 - https://djangocentral.com/
 
+- https://www.geeksforgeeks.org/django-crud-create-retrieve-update-delete-function-based-views/
+
 - Code Institute - I think therefore I Blog 
 
 
@@ -236,10 +238,12 @@ The steps to deploy are as follows:
 - You must enter a unique app name
 - Next select your region
 - Click on the Create App button
+- Add Database to App Resources,  Resources Located in the Resources Tab, Add-ons, search and add ‘Heroku Postgres’
+ 
 - The next page is the project’s Deploy Tab. Click on the Settings Tab and scroll down to Config Vars
 - Click Reveal Config Vars and enter port into the Key box and 8000 into the Value box and click the Add button
-- Scroll down to the Buildpack section click Add Buildpack select python and click Save Changes
-- Repeat step 8 to add node.js. o Note: The Buildpacks must be in the correct order. If not click and drag them to move into the correct order
+- Copy DATABASE_URL value,  Located in the Settings, click reveal Config Vars, Copy Text in
+- Add Secret Key to Config Vars 
 - Go to the top of the page and choose the Deploy tab
 - Select Github as the deployment method
 - Confirm you want to connect to GitHub
