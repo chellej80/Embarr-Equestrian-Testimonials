@@ -69,17 +69,17 @@ A list of the issues captured and progressed can be viewed [here](https://github
 
   Featured on all pages, the full responsive navigation bar includes links to the Home page and all sub pages - Login, Logout, Register, User Profile link and is identical in structure for each page to allow for easy navigation. When the user logs in, the username appears in lieu of the login option and this links to the user profile page, the register link is also replaced with the logout link. The navigation items are styled to transition to a hamburger menu when the site is reduced in size on a mobile device. This section will allow the user to easily navigate from page to page across all devices without having to revert back to the previous page via the ‘back’ button. 
 
-    <img src="media/images/Nav_1.jpg" width="600px">
+    <img src="media/images/Nav_1.jpg">
 
 
-    <img src="media/images/Nav_2.jpg" width="600px">
+    <img src="media/images/Nav_2.jpg">
 
 
 - __Logo__
 
     The logo I created simply using a combination of text and a font awsome icon. The logo is a hyperlink that takes the user to the homepage.
     
-    <img src="media/images/logo.jpg" width="200px">
+    <img src="media/images/logo.jpg" width="250px">
 
 
 - __Login Page__
@@ -94,7 +94,7 @@ A list of the issues captured and progressed can be viewed [here](https://github
 
     The search bar allows a user to search for a service they would like to read about and leave a review
 
-    <img src="media/images/search_bar.jpg" width="300px">
+    <img src="media/images/search_bar.jpg" width="400px">
 
 - __Service Pages__
 
