@@ -3,7 +3,7 @@
 
 ## Overview
 
-[Embarr Equestrian Testimonials](https://embarr-equestrian-testimonials.herokuapp.com/) is a service review site for an Equine Business (Embarr Equestian) that allows clients to post reviews of services specified on the site. This project is a Full Stack website built using the Django framework and deployed using Heroku.
+[Embarr Equestrian Testimonials](https://embarr-equestrian-testimonials.herokuapp.com/) is a service review site for an Equine Business (Embarr Equestian) that allows clients to post reviews of services specified on the site. This project is a Full Stack website built using the Django framework and deployed using Heroku. It follows the CRUD logic, Users can Create (Sumbit a Review), Retrieve (Search for a Service), Update (Update their Reviews/ Profile) and Delete (Delete their reviews).
 
 
 ## The Site Mockup
@@ -69,17 +69,17 @@ A list of the issues captured and progressed can be viewed [here](https://github
 
   Featured on all pages, the full responsive navigation bar includes links to the Home page and all sub pages - Login, Logout, Register, User Profile link and is identical in structure for each page to allow for easy navigation. When the user logs in, the username appears in lieu of the login option and this links to the user profile page, the register link is also replaced with the logout link. The navigation items are styled to transition to a hamburger menu when the site is reduced in size on a mobile device. This section will allow the user to easily navigate from page to page across all devices without having to revert back to the previous page via the ‘back’ button. 
 
-    <img src="media/images/Nav_1.jpg" width="400px">
+    <img src="media/images/Nav_1.jpg" width="600px">
 
 
-    <img src="media/images/Nav_2.jpg" width="400px">
+    <img src="media/images/Nav_2.jpg" width="600px">
 
 
 - __Logo__
 
     The logo I created simply using a combination of text and a font awsome icon. The logo is a hyperlink that takes the user to the homepage.
     
-    <img src="media/images/logo.jpg" width="100px">
+    <img src="media/images/logo.jpg" width="200px">
 
 
 - __Login Page__
@@ -113,25 +113,43 @@ A list of the issues captured and progressed can be viewed [here](https://github
        
 
 ## Frameworks & Languages Used
+- HTML
+- CSS
+- JavaScript
 - Django
 - Python
 
 Python Packages:
 
--
-- OS: modules provide numerous tools to deal with filenames, paths, directories
+- Gunicorn - As the server for Heroku
+- Cloudinary - Was used to host the static files and media
+- Dj_database_url - To parse the database URL from the environment variables in Heroku
+- Psycopg2 - As an adaptor for Python and PostgreSQL databases
+- Summernote- As a text editor
+- Allauth - For authentication, registration, account management
+- Crispy Forms -To style the forms
 
 
 ## Frameworks, Libaries and technologies used
 
 - [Git/ Github](https://github.com/) - Git/Github was used for version control, storage and deployment of the project.
 - [Heroku](https://www.heroku.com/) - Heroku was used to deploy and create the terminal application.
-- [Techsini](https://techsini.com/multi-mockup) - This was used for the mockup image in the overview.
+- [Am I Responsive](https://amiresponsive.co.uk/ ) - This was used for the mockup image in the overview and assist with the       responsiveness testing.
+- [Bootstrap](https://getbootstrap.com/) - This was used to style the website, add responsiveness and interactivity
+- [PostgreSQL](https://www.postgresql.org/) - Database used through heroku.
+- [Lucidchart](https://lucid.app/) - Lucidchart was used to create the database diagram
+- [PEP8](http://pep8online.com/) - PEP8 was used to validate all the Python code
+- [W3C - HTML](https://validator.w3.org/) - W3C- HTML was used to validate all the HTML code
+- [W3C - CSS](https://jigsaw.w3.org/css-validator/) - W3C - CSS was used to validate the CSS code
+- [Fontawesome](https://fontawesome.com/) - To add icons to the website
+- [Google Chrome Dev Tools](https://developer.chrome.com/docs/devtools/) - To check App responsiveness and debugging
 
 
 ## Testing Conducted 
 
 ### Usability testing 
+
+All regression testing results can be viewed [here](https://github.com/users/chellej80/projects/7) under the Regression Testing Column in the project Agile board.
 
 
 ### Bugs
@@ -150,12 +168,18 @@ I reviewed all content on the site for:
 
 ### Validation
 
-I ran all the Python Code through [PEP8](http://pep8online.com/)
+- I ran all the Python Code through [PEP8](http://pep8online.com/)
+- I ran HTML through [HTML Validator](https://validator.w3.org/)
+- I ran the CSS through [Jigsaw](Jigsawhttps://jigsaw.w3.org)
+- I also ran all code through [code beautifier](https://codebeautify.org/)
 
 
 ## Lighthouse
 
-Lighthouse was used to test Performance, Best Practices, Accessibility and SEO on Desktop.
+Lighthouse was used to test Performance, Best Practices, Accessibility and SEO on Desktop.<br>
+Accessibility - Further work is required here to improve that score.
+
+<img src="media/images/lighthouse.JPG" width="350px">
 
 
 
@@ -163,8 +187,6 @@ Lighthouse was used to test Performance, Best Practices, Accessibility and SEO o
 ## Credits
 
 Python Code inspired and adapted from the following tutorials and sources:
-
-- https://www.pythonforbeginners.com/code-snippets-source-code/game-hangman
 
 - https://inventwithpython.com/invent4thed/chapter8.html
 
@@ -176,11 +198,15 @@ Python Code inspired and adapted from the following tutorials and sources:
 
 - https://www.sololearn.com/Discuss/1582033/how-to-check-if-input-is-empty-in-python
 
-- Code Institute - Blog 
+- https://legionscript.medium.com/
 
-Flowchart created in:
+- https://getbootstrap.com/docs/4.0/components/modal/
 
-- https://app.diagrams.net/
+- https://dev.to/earthcomfy/getting-started-custom-user-model-5hc
+
+- https://djangocentral.com/
+
+- Code Institute - I think therefore I Blog 
 
 
 ### Content
@@ -224,5 +250,7 @@ The steps to deploy are as follows:
   - On submission the project is forked in Github, by forking the project a copy of the original repository is made that can be viewed without affecting the original repository by following these steps: In the GitHub repository, locate the settings, above this is the option to 'fork', select this to create a copy
 
   - Cloning a repository: When you create a repository on GitHub.com, it exists as a remote repository. You can clone your repository to create a local copy on your computer and sync between the two locations. It makes it easier to fix merge conflicts, add or remove files, and push larger commits. 
+
+## The Deployed Site 
 
 The live link can be found here - https://embarr-equestrian-testimonials.herokuapp.com/ 
