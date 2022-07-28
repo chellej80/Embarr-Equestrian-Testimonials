@@ -17,7 +17,7 @@ from django.db.models import Q
 class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = 'index.html'
-    paginate_by = 2
+    paginate_by = 3
 
 
 class PostDetail(View):
