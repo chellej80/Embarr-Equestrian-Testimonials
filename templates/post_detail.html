@@ -20,7 +20,9 @@
         <div class="col-md-8 card mb-4  mt-3">
           <div class="card-body">
             <!-- Reviews -->
-            <h2>{{ reviews.count }} Reviews</h2> {% for review in reviews %} <div class="reviews" style="padding: 10px;">
+            <h2>{{ reviews.count }} Review(s)</h2>
+            <p>---------------------------------</p>
+            {% for review in reviews %} <div class="reviews" style="padding: 10px;">
               <p class="font-weight-bold">
                 {{ review.name }} | <span class=" text-muted font-weight-normal">
                   {{ review.created_on }}
@@ -53,6 +55,6 @@
         </div>
       </div>
     </div>
-  </div>
-</div>
+  <!--</div>
+</div>-->
 {% endblock content %}

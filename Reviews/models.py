@@ -1,9 +1,9 @@
+"""Models Imports"""
 from django.db import models
-from django.contrib.auth import get_user_model
 from django.contrib.auth.models import User
 from django.urls import reverse
 
-# Set post status
+# Set service post status
 
 
 STATUS = (
@@ -12,12 +12,9 @@ STATUS = (
 )
 
 
-User = get_user_model()
-
-
 class UserProfile(models.Model):
     """
-    Model for user profile
+    Model for the update of the user profile
     """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     first_name = models.CharField(max_length=200, null=True)
@@ -29,7 +26,7 @@ class UserProfile(models.Model):
 
 class Post(models.Model):
     """
-    Model for the Service posts
+    Model for the creation & management of the Service posts
     """
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
@@ -50,7 +47,7 @@ class Post(models.Model):
 
 class Review(models.Model):
     """
-    Class review model that captures and saves the review in the DB
+    Class review model that creates and saves the review in the DB
     """
 
     RATING_CHOICES = (
