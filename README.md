@@ -81,36 +81,58 @@ A list of the issues captured and progressed can be viewed [here](https://github
     
     <img src="media/images/logo.jpg" width="250px">
 
+- __Register Page__
+
+    The User register page was created using the out of the box option from Django Auth. Further styling of this page is required but currently out of scope for the timeframe of this project.
 
 - __Login Page__
 
+    The User login page was created using the out of the box option from Django Auth. Further styling of this page is required but currently out of scope for the timeframe of this project.
+
 - __Logout Page__
 
-- __Register Page__
+  The User logout page was created using the out of the box option from Django Auth. Further styling of this page is required but currently out of scope for the timeframe of this project.
 
 - __Profile Page__
 
+  The User pofile page can be accessed by clicking on the users name in the navigation bar, once they are logged in. the user can update their personal details here. There is room to expand the functionality of this page, for example, allow the user to upload a profile picture or add a bio section, but this was out of scope for this project. Further styling of this page is required but currently out of scope for the timeframe of this project.
+
 - __Search Bar__
 
-    The search bar allows a user to search for a service they would like to read about and leave a review
+    The search bar allows a user to search for a service they would like to read about and leave a review. The search is crude and requires some futher development, but this was out of scope for this project.
 
     <img src="media/images/search_bar.jpg" width="400px">
 
-- __Service Pages__
+- __Service Post Pages__
 
-- __Post Service Detail Pages__
+  The service post pages (the homepage), this page lists a high level view of the services offered by Embarr Equestrian. The user can click on the service post to see more detail, or click though the page navigation to see further service posts. These pages also display the 'About me' sidebar, the searchbar option and the navigation bar.
+
+- __Sidebar About Page__
+
+  The sidebar contains the 'About us' details and links to further information that expands on the meaning of Embarr.
+
+- __Service Post Detail Pages__
+
+  The service post detail page(s) are accessed by clicking on the high level view of a service post. This takes the user to a full page view of the service, that expands on the details, allows the user to read the reviews posted, or if logged in submit a review, or delete/ update a review.
 
 - __Submit Review__
 
+  The submit review option is accessed via the service post detail page and is only available for logged in registered users, otherwise this option is hidden. 
+
 - __Update/ Delete Review__
+
+  The Update/delete review option is accessed via the service post detail page and is only available for logged in registered users, otherwise this option is hidden.
 
 
 ### Features Left to Implement
 
 - Contact Page
 - Service Categories
+- Improved search functionality
+- Add bio/ profile picture to profile
+- Image gallery that users can upload to
 
-       
+    
 
 ## Frameworks & Languages Used
 - HTML
@@ -149,7 +171,6 @@ Python Packages:
 
 ### Usability testing 
 
-All regression testing results can be viewed [here](https://github.com/users/chellej80/projects/7) under the Regression Testing Column in the project Agile board.
 
 
 ### Bugs
@@ -229,7 +250,7 @@ All content was written by the project owner.
 
 # Deployment
 
-The site was deployed to Heroku. 
+The site was first developed in Github (Repository created using the Code Institute Template) and tested there locally before deploying to Heroku:
 
 The steps to deploy are as follows: 
 
