@@ -117,20 +117,23 @@ A list of the issues captured and progressed can be viewed [here](https://github
 
 - __Submit Review__
 
-  The submit review option is accessed via the service post detail page and is only available for logged in registered users, otherwise this option is hidden. 
+  The submit review option is accessed via the service post detail page and is only available for logged in registered users, otherwise this option is hidden. Logged in users can select 'Submit a Review', a review form appears, once populated and submitted, a message will display informing the user that their review has been submitted for approval. An admin must approve the review before it will display.
 
 - __Update/ Delete Review__
 
-  The Update/delete review option is accessed via the service post detail page and is only available for logged in registered users, otherwise this option is hidden.
+  The Update/delete review option is accessed via the service post detail page and is only available for logged in registered users, otherwise this option is hidden. Logged in users can update/ delete reviews they have posted. They cannot update/ delete other users review. On selection of 'Edit' the user will be presented with a form to edit and submit. On submission the user will recieve message feedback to say their message has been updated. If the user selects to 'delete' by clicking on the trash can icon, the user will be asked if they are sure they want to delete, and once selected it will update them their message has been deleted.
 
 
 ### Features Left to Implement
 
+- Approval authentication of updated reviews (This was out of scope)
+- Bespoke forms for the out of the box Django Auth pages - Login/ Logout/ Register
 - Contact Page
 - Service Categories
 - Improved search functionality
 - Add bio/ profile picture to profile
 - Image gallery that users can upload to
+
 
     
 
@@ -201,9 +204,6 @@ Lighthouse was used to test Performance, Best Practices, Accessibility and SEO o
 Accessibility - Further work is required here to improve that score.
 
 <img src="media/images/lighthouse.JPG" width="350px">
-
-
-
 
 ## Credits
 
