@@ -53,7 +53,7 @@ header {
     left: 16px;
   }
 
-  .bottom-left {
+.bottom-left {
     position: absolute;
     bottom: 10px;
     left: 16px;
@@ -69,7 +69,6 @@ header {
     background-color: blue;
     
     }
-
 
 
 /* Media Queries */

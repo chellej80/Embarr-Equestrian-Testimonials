@@ -53,17 +53,13 @@ As a website superuser, I can:
 This project was managed using the Agile method. All user stories were captured and updated using Githubs Project functionality and can be reviewed [here](https://github.com/users/chellej80/projects/7).
 A list of the issues captured and progressed can be viewed [here](https://github.com/chellej80/Embarr-Equestrian-Testimonials/issues). 
 
-## Flowchart/ Wireframe
-
-
 
 ## Database Entity Diagram
 
 <img src=media/images/DB_ER.jpg>
 
 
-
-## Features 
+## Site Features 
 
 - __Navigation Bar__
 
@@ -79,23 +75,31 @@ A list of the issues captured and progressed can be viewed [here](https://github
 
     The logo I created simply using a combination of text and a font awsome icon. The logo is a hyperlink that takes the user to the homepage.
     
-    <img src="media/images/logo.jpg" width="250px">
+    <img src="media/images/logo.jpg" width="350px">
 
 - __Register Page__
 
     The User register page was created using the out of the box option from Django Auth. Further styling of this page is required but currently out of scope for the timeframe of this project.
 
+    <img src="media/images/register.jpg" width="350px">
+
 - __Login Page__
 
     The User login page was created using the out of the box option from Django Auth. Further styling of this page is required but currently out of scope for the timeframe of this project.
+
+    <img src="media/images/sign_in.jpg" width="350px">
 
 - __Logout Page__
 
   The User logout page was created using the out of the box option from Django Auth. Further styling of this page is required but currently out of scope for the timeframe of this project.
 
+  <img src="media/images/log_out.jpg" width="350px">
+
 - __Profile Page__
 
   The User pofile page can be accessed by clicking on the users name in the navigation bar, once they are logged in. the user can update their personal details here. There is room to expand the functionality of this page, for example, allow the user to upload a profile picture or add a bio section, but this was out of scope for this project. Further styling of this page is required but currently out of scope for the timeframe of this project.
+
+  <img src="media/images/profile.jpg" width="350px">
 
 - __Search Bar__
 
@@ -107,21 +111,33 @@ A list of the issues captured and progressed can be viewed [here](https://github
 
   The service post pages (the homepage), this page lists a high level view of the services offered by Embarr Equestrian. The user can click on the service post to see more detail, or click though the page navigation to see further service posts. These pages also display the 'About me' sidebar, the searchbar option and the navigation bar.
 
+   <img src="media/images/service_post_page.jpg" width="350px">
+
 - __Sidebar About Page__
 
   The sidebar contains the 'About us' details and links to further information that expands on the meaning of Embarr.
+
+  <img src="media/images/about_us.jpg" width="350px">
 
 - __Service Post Detail Pages__
 
   The service post detail page(s) are accessed by clicking on the high level view of a service post. This takes the user to a full page view of the service, that expands on the details, allows the user to read the reviews posted, or if logged in submit a review, or delete/ update a review.
 
+  <img src="media/images/post_detail_nl.jpg" width="350px">
+  <img src="media/images/post_detail_logged.jpg" width="345px">
+
+
 - __Submit Review__
 
   The submit review option is accessed via the service post detail page and is only available for logged in registered users, otherwise this option is hidden. Logged in users can select 'Submit a Review', a review form appears, once populated and submitted, a message will display informing the user that their review has been submitted for approval. An admin must approve the review before it will display.
 
+  <img src="media/images/review_form.jpg" width="350px">
+
 - __Update/ Delete Review__
 
   The Update/delete review option is accessed via the service post detail page and is only available for logged in registered users, otherwise this option is hidden. Logged in users can update/ delete reviews they have posted. They cannot update/ delete other users review. On selection of 'Edit' the user will be presented with a form to edit and submit. On submission the user will recieve message feedback to say their message has been updated. If the user selects to 'delete' by clicking on the trash can icon, the user will be asked if they are sure they want to delete, and once selected it will update them their message has been deleted.
+
+  <img src="media/images/update_review.jpg" width="350px">
 
 
 ### Features Left to Implement
@@ -134,10 +150,8 @@ A list of the issues captured and progressed can be viewed [here](https://github
 - Add bio/ profile picture to profile
 - Image gallery that users can upload to
 
-
     
-
-## Frameworks & Languages Used
+# Frameworks & Languages Used
 - HTML
 - CSS
 - JavaScript
@@ -155,7 +169,7 @@ Python Packages:
 - Crispy Forms -To style the forms
 
 
-## Frameworks, Libaries and technologies used
+### Frameworks, Libaries and technologies used
 
 - [Git/ Github](https://github.com/) - Git/Github was used for version control, storage and deployment of the project.
 - [Heroku](https://www.heroku.com/) - Heroku was used to deploy and create the terminal application.
@@ -170,9 +184,14 @@ Python Packages:
 - [Google Chrome Dev Tools](https://developer.chrome.com/docs/devtools/) - To check App responsiveness and debugging
 
 
-## Testing Conducted 
+# Testing Conducted 
 
-### Usability testing 
+## Usability testing 
+
+First Header  | Second Header
+------------- | -------------
+Content Cell  | Content Cell
+Content Cell  | Content Cell
 
 
 
@@ -184,10 +203,9 @@ Python Packages:
 ### Content 
 
 I reviewed all content on the site for:
-- Grammar and spelling mistakes
-- Hangman pictures are placed properly with proper sizes & displaying as expected
-- Instructions are clear and contain correct information
-- Verified all text/ headings are displaying correctly
+- Grammar and spelling mistakes.
+- Calls to action are clear and contain correct information.
+- Verified all text/ headings are displaying correctly.
 
 
 ### Validation
@@ -197,7 +215,6 @@ I reviewed all content on the site for:
 - I ran the CSS through [Jigsaw](Jigsawhttps://jigsaw.w3.org)
 - I also ran all code through [code beautifier](https://codebeautify.org/)
 
-
 ## Lighthouse
 
 Lighthouse was used to test Performance, Best Practices, Accessibility and SEO on Desktop.<br>
@@ -205,7 +222,7 @@ Accessibility - Further work is required here to improve that score.
 
 <img src="media/images/lighthouse.JPG" width="350px">
 
-## Credits
+# Credits
 
 Python Code inspired and adapted from the following tutorials and sources:
 
@@ -245,8 +262,7 @@ All content was written by the project owner.
 
 ### Acknowledgments
 
-
-
+Special thanks to my mentor Rohit, my colleagues at Code Institute, and Kasia Bogucka
 
 # Deployment
 
@@ -260,19 +276,19 @@ The steps to deploy are as follows:
 - Next select your region
 - Click on the Create App button
 - Add Database to App Resources,  Resources Located in the Resources Tab, Add-ons, search and add ‘Heroku Postgres’
- 
 - The next page is the project’s Deploy Tab. Click on the Settings Tab and scroll down to Config Vars
-- Click Reveal Config Vars and enter port into the Key box and 8000 into the Value box and click the Add button
-- Copy DATABASE_URL value,  Located in the Settings, click reveal Config Vars, Copy Text in
-- Add Secret Key to Config Vars 
-- Go to the top of the page and choose the Deploy tab
+- Click Reveal Config Vars and add a new record with SECRET_KEY
+- Click Reveal Config Vars and add a new record with the `CLOUDINARY_URL`
+- Click Reveal Config Vars and add a new record with the `DISABLE_COLLECTSTATIC = 1`
+- The next page is the project’s Deploy Tab. Click on the Settings Tab and scroll down to Config Vars
+- Next, scroll down to the Buildpack section click Add Buildpack select python and click Save Changes
 - Select Github as the deployment method
 - Confirm you want to connect to GitHub
 - Search for the repository name and click the connect button
 - Scroll to the bottom of the deploy page and select the preferred deployment type
 - Click either Enable Automatic Deploys for automatic deployment when you push updates to Github
 
-  - On submission the project is forked in Github, by forking the project a copy of the original repository is made that can be viewed without affecting the original repository by following these steps: In the GitHub repository, locate the settings, above this is the option to 'fork', select this to create a copy
+- On submission the project is forked in Github, by forking the project a copy of the original repository is made that can be viewed without affecting the original repository by following these steps: In the GitHub repository, locate the settings, above this is the option to 'fork', select this to create a copy
 
   - Cloning a repository: When you create a repository on GitHub.com, it exists as a remote repository. You can clone your repository to create a local copy on your computer and sync between the two locations. It makes it easier to fix merge conflicts, add or remove files, and push larger commits. 
 
