@@ -1,11 +1,11 @@
 {% extends "base.html" %} {% block content %} <header class="masthead">
     <div class="container h-100">
       <div class="row">
-        <div class="col-md-6 col-md-6 mx-auto">
+        <div class="col-md-6 mx-auto">
           <h4 class="site-heading my-3 mt-4 text-grey"> Welcome to Embarr Equestrian Services | Please Review</h4>
             <hr>
               <div class="row">
-                <form action="{% url 'search' %}" method="POST" class="d-flex mx-auto col-md-6"> {% csrf_token %} <input class="form-control me-2" type="search" name="searched" placeholder="Search for a Service e.g Livery" aria-label="Search">
+                <form action="{% url 'search' %}" method="POST" class="d-flex mx-auto col-md-10"> {% csrf_token %} <input class="form-control me-2" type="search" name="searched" placeholder="Search for a Service e.g Livery" aria-label="Search">
                   <button class="btn btn-primary" type="submit">
                     <i class="fas fa-search"></i>
                   </button>
@@ -38,5 +38,4 @@
       </li> {% endif %} </ul>
   </nav> {% endif %} {%endblock%}
 
-  <!--import JS script for Image gallery-->
-  <script src="assets/main.js"></script>
+  
