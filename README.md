@@ -3,7 +3,7 @@
 
 ## Overview
 
-[Embarr Equestrian Testimonials](https://embarr-equestrian-testimonials.herokuapp.com/) is a service review site for an Equine Business (Embarr Equestian) that allows clients to post reviews of services specified on the site. This project is a Full Stack website built using the Django framework and deployed using Heroku. It follows the CRUD logic, Users can Create (Sumbit a Review), Retrieve (Search for a Service), Update (Update their Reviews/ Profile) and Delete (Delete their reviews).
+[Embarr Equestrian Testimonials](https://embarr-equestrian-testimonials.herokuapp.com/) is a service review site for an Equine Business (Embarr Equestrian) that allows clients to post reviews of services specified on the site. This project is a Full Stack website built using the Django framework and deployed using Heroku. It follows the CRUD logic, Users can Create (Submit a Review), Retrieve (Search for a Service), Update (Update their Reviews/ Profile) and Delete (Delete their reviews).
 
 
 ## The Site Mockup
@@ -75,49 +75,49 @@ A list of the issues captured and progressed can be viewed [here](https://github
 
     The logo I created simply using a combination of text and a font awsome icon. The logo is a hyperlink that takes the user to the homepage.
     
-    <img src="media/images/logo.jpg" width="350px">
+    <img src="media/images/logo.jpg" width="450px">
 
 - __Register Page__
 
     The User register page was created using the out of the box option from Django Auth. Further styling of this page is required but currently out of scope for the timeframe of this project.
 
-    <img src="media/images/register.jpg" width="350px">
+    <img src="media/images/register.jpg" width="450px">
 
 - __Login Page__
 
     The User login page was created using the out of the box option from Django Auth. Further styling of this page is required but currently out of scope for the timeframe of this project.
 
-    <img src="media/images/sign_in.jpg" width="350px">
+    <img src="media/images/sign_in.jpg" width="450px">
 
 - __Logout Page__
 
   The User logout page was created using the out of the box option from Django Auth. Further styling of this page is required but currently out of scope for the timeframe of this project.
 
-  <img src="media/images/log_out.jpg" width="350px">
+  <img src="media/images/log_out.jpg" width="450px">
 
 - __Profile Page__
 
   The User pofile page can be accessed by clicking on the users name in the navigation bar, once they are logged in. the user can update their personal details here. There is room to expand the functionality of this page, for example, allow the user to upload a profile picture or add a bio section, but this was out of scope for this project. Further styling of this page is required but currently out of scope for the timeframe of this project.
 
-  <img src="media/images/profile.jpg" width="350px">
+  <img src="media/images/profile.jpg" width="450px">
 
 - __Search Bar__
 
     The search bar allows a user to search for a service they would like to read about and leave a review. The search is crude and requires some futher development, but this was out of scope for this project.
 
-    <img src="media/images/search_bar.jpg" width="400px">
+    <img src="media/images/search_bar.jpg" width="450px">
 
 - __Service Post Pages__
 
   The service post pages (the homepage), this page lists a high level view of the services offered by Embarr Equestrian. The user can click on the service post to see more detail, or click though the page navigation to see further service posts. These pages also display the 'About me' sidebar, the searchbar option and the navigation bar.
 
-   <img src="media/images/service_post_page.jpg" width="350px">
+   <img src="media/images/service_post_page.jpg" width="450px">
 
 - __Sidebar About Page__
 
   The sidebar contains the 'About us' details and links to further information that expands on the meaning of Embarr.
 
-  <img src="media/images/about_us.jpg" width="350px">
+  <img src="media/images/about_us.jpg" width="450px">
 
 - __Service Post Detail Pages__
 
@@ -131,19 +131,21 @@ A list of the issues captured and progressed can be viewed [here](https://github
 
   The submit review option is accessed via the service post detail page and is only available for logged in registered users, otherwise this option is hidden. Logged in users can select 'Submit a Review', a review form appears, once populated and submitted, a message will display informing the user that their review has been submitted for approval. An admin must approve the review before it will display.
 
-  <img src="media/images/review_form.jpg" width="350px">
+  <img src="media/images/review_form.jpg" width="450pxpx">
 
 - __Update/ Delete Review__
 
-  The Update/delete review option is accessed via the service post detail page and is only available for logged in registered users, otherwise this option is hidden. Logged in users can update/ delete reviews they have posted. They cannot update/ delete other users review. On selection of 'Edit' the user will be presented with a form to edit and submit. On submission the user will recieve message feedback to say their message has been updated. If the user selects to 'delete' by clicking on the trash can icon, the user will be asked if they are sure they want to delete, and once selected it will update them their message has been deleted.
+  The Update/delete review option is accessed via the service post detail page and is only available for logged in registered users, otherwise this option is hidden. Logged in users can update/ delete reviews they have posted. They cannot update/ delete other users review. On selection of 'Edit' the user will be presented with a form to edit and submit. On submission the user will receive message feedback to say their message has been updated. If the user selects to 'delete' by clicking on the trash can icon, the user will be asked if they are sure they want to delete, and once selected it will update them their message has been deleted.
 
   <img src="media/images/update_review.jpg" width="350px">
+  <img src="media/images/Edit.jpg" width="350px">
+
 
 
 ### Features Left to Implement
 
 - Approval authentication of updated reviews (This was out of scope)
-- Bespoke forms for the out of the box Django Auth pages - Login/ Logout/ Register
+- Bespoke forms for the out of the box Django Auth pages - Login/ Logout/ Register and update review form
 - Contact Page
 - Service Categories
 - Improved search functionality
@@ -169,7 +171,7 @@ Python Packages:
 - Crispy Forms -To style the forms
 
 
-### Frameworks, Libaries and technologies used
+### Frameworks, Libraries and technologies used
 
 - [Git/ Github](https://github.com/) - Git/Github was used for version control, storage and deployment of the project.
 - [Heroku](https://www.heroku.com/) - Heroku was used to deploy and create the terminal application.
@@ -314,7 +316,7 @@ Expected Results  | Pass y/n
 Register brings user to sign up page | Y
 User can sucessfully Register | Y
 User's Profile name appears in Navbar when logged in | Y
-User can click on userame to go to the profile page & update their profile | Y
+User can click on username to go to the profile page & update their profile | Y
 Login brings user to sign up page | Y
 Logout brings user to sign out page | Y
 
@@ -353,7 +355,7 @@ Test Steps:
 - Log out and back in as a different user
 - Confirm that the Edit/delete options are not available for other users' review posts.
 
-Test 3 – Edit/ Delete a Review
+Test 2 – Edit/ Delete a Review
 
 Users when logged in can edit/ delete reviews linked to their username only
 
@@ -377,7 +379,7 @@ User - logged in can successfully edit a review item | Y
 User - logged in can successfully delete a review item | Y
 
 
-### Pagination
+## Pagination
 
 Pagination is set to '3' in admin
 
@@ -391,17 +393,17 @@ User can only see three Service posts per page | Y
 User can navigate to next page to view more posts | Y
 
 
-### External URL Links
+## External URL Links
 
 All external url links are set to open in a new window and tested, including the footer links
 
-### Responsiveness 
+## Responsiveness 
 
 I used chrome developer tools, Techsini & ami throughout all development of the site to ensure that it was responding to all devices down to 280px - 360px width
 
 I tested the site responsiveness on my iphone/ ipad and my family/ friends android mobile devices to ensure the site was rendering and functional across a range of devices.
 
-### Admin 
+## Admin 
 
 Expected Results  | Pass y/n
 ------------- | -------------
@@ -412,13 +414,13 @@ Admin User can edit a service post | Y
 Admin User can approve a review | Y
 Admin User can create/update/delete users | Y
 
-### Bugs
+## Bugs
 
 - CSS did not transfer to Heroku - Fixed by installed whitenoise as a fix
 - Register linked to sign out page - Fixed by updating link in base.html
-- Edit/delete reviews was accesible to all logged in users on all reviews - fixed by linking username to the review.name from the review model.
+- Edit/delete reviews was accessible to all logged in users on all reviews - fixed by linking username to the review.name from the review model and updating the logic in the post detail html.
 
-### Content 
+## Content 
 
 I reviewed all content on the site for:
 - Grammar and spelling mistakes.
@@ -426,7 +428,7 @@ I reviewed all content on the site for:
 - Verified all text/ headings are displaying correctly.
 
 
-### Validation
+## Validation
 
 - I ran all the Python Code through [PEP8](http://pep8online.com/)
 - I ran HTML through [HTML Validator](https://validator.w3.org/)
@@ -498,8 +500,6 @@ The steps to deploy are as follows:
 - Click Reveal Config Vars and add a new record with SECRET_KEY
 - Click Reveal Config Vars and add a new record with the `CLOUDINARY_URL`
 - Click Reveal Config Vars and add a new record with the `DISABLE_COLLECTSTATIC = 1`
-- The next page is the project’s Deploy Tab. Click on the Settings Tab and scroll down to Config Vars
-- Next, scroll down to the Buildpack section click Add Buildpack select python and click Save Changes
 - Select Github as the deployment method
 - Confirm you want to connect to GitHub
 - Search for the repository name and click the connect button
