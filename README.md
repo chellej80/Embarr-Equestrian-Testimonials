@@ -403,10 +403,20 @@ I tested the site responsiveness on my iphone/ ipad and my family/ friends andro
 
 ### Admin 
 
+Expected Results  | Pass y/n
+------------- | -------------
+Admin User can log in to django auth admin | Y
+Admin User can create a service post | Y
+Admin User can delete a service post | Y
+Admin User can edit a service post | Y
+Admin User can approve a review | Y
+Admin User can create/update/delete users | Y
+
 ### Bugs
 
-
-
+- CSS did not transfer to Heroku - Fixed by installed whitenoise as a fix
+- Register linked to sign out page - Fixed by updating link in base.html
+- Edit/delete reviews was accesible to all logged in users on all reviews - fixed by linking username to the review.name from the review model.
 
 ### Content 
 
