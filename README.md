@@ -186,14 +186,222 @@ Python Packages:
 
 # Testing Conducted 
 
-## Usability testing 
 
-First Header  | Second Header
+## Navigation
+
+### Navigation Bar
+
+Test 1
+
+All Navigation bar links are clickable and return the expected pages.
+
+Test Steps:
+
+Click on each nav link in the nav bar, and navigate between all pages using the nav links. Checking that each link brings the user to the correct page.
+
+Test 2
+
+Navigation Bar is responsive and transforms to a Hamburger menu
+
+Test Steps:
+
+Use developer tools to inspect and test the responsiveness and click on all nav links, navigating between all linked pages.
+
+Results:
+
+Transforms to Hamburger menu as expected and links to all correct pages as tested in test 1.
+
+Navbar Expected Results  | Pass y/n
+------------- | ------------- 
+Login - links to sign in page  | Y
+Register - links to register page | Y
+Home - brings user to home page  | Y
+Embarr Equestrian links to home  | Y
+Logout Link appears when logged in | Y
+Logout links to sign out page | Y
+Username appears when logged in | Y
+Username links to User Profile Page | Y
+Login link reappears when logged out | Y
+Messages appear as expected when successful login/ logout | Y
+
+Hamburger Navbar Expected Results  | Pass y/n
+------------- | ------------- 
+Login - links to sign in page | Y
+Register - links to register page | Y
+Home - brings user to home page | Y
+Embarr Equestrian links to home | Y
+Logout Link appears when logged in | Y
+Logout links to sign out page | Y
+Username appears when logged in | Y
+Username links to User Profile Page | Y
+Login link reappears when logged out | Y
+Messages appear as expected when successful login/ logout | Y
+
+### Page Navigation
+
+Test 1
+
+Test Steps:
+
+Click on page navigation links at bottom of page to navigate between pages
+
+Expected Results  | Pass y/n
+------------- | ------------- 
+Click on 'Next' moves to next page | Y
+Click on previous returns user to previous page | Y
+
+## Search Bar
+
+Test 1
+
+Enter text into the search bar to check for return of results
+Test Steps:
+
+Enter text into search bar that will return a positive result
+For example – Livery, EAL, Coaching
+Enter text into search bar that will return a negative result
+For example – Horse, Rider
+
+Test 2
+
+After entering text in the search box click on search magnifier to return a result
+After entering text in the search box hit return to return a result
+
+Test 3
+
+Confirm that the link returned from a positive result links to the correct page
+Confirm that the page displayed from a negative result return is displaying correctly
+
+Expected Results  | Pass y/n
 ------------- | -------------
-Content Cell  | Content Cell
-Content Cell  | Content Cell
+Search returns a positive result | Y
+Search link returned links to correct result | Y
+Search returns a negative result - page displays as expected | Y
+Hitting return after entering text returns the result page | Y
+Clicking the e search magnifier returns the result page | Y
+Clicking x after entering text in the search bar clears the text | Y
+Default text displays in the search Box | Y
 
 
+## User Registration
+
+Test 1 -Register
+
+Test steps:
+
+Click on register, sign up page displays, populate fields and submit
+
+Test 2 – Login
+
+Test steps:
+
+Click on login, enter details and submit
+
+Test 3 - Update Profile
+
+Test steps:
+
+Login, click on username, enter details and submit
+
+Test 4 - Logout
+
+Test steps:
+
+Click on logout, and verify that you are sure
+
+Expected Results  | Pass y/n
+------------- | -------------
+Register brings user to sign up page | Y
+User can sucessfully Register | Y
+User's Profile name appears in Navbar when logged in | Y
+User can click on userame to go to the profile page & update their profile | Y
+Login brings user to sign up page | Y
+Logout brings user to sign out page | Y
+
+## View service Posts
+
+Test 1 - View Service Posts
+
+Test Steps:
+
+Navigate to the homepage, view list of service posts and navigate between pages to view all
+
+Test 2 - Click on Service Post link 
+
+Test Steps:
+
+From the home page click on each post ‘Click to Review’ to navigate to the post details page to view the service post and see the list of reviews.
+
+Expected Results  | Pass y/n
+------------- | -------------
+User can view all service posts on homepage and navigate to next page view | Y
+User can click on link on service post to navigate to the service post detail page | Y
+
+## Reviews
+
+Test 1 - Submit a Review
+
+Test Steps:
+
+- Log in via the nav link
+- Navigate to the post detail page as in Test 1.
+- Click submit a review and populate all fields
+- Log in as an admin to approve the review
+- Log out and back in as an online user
+- View submitted review
+- Confirm that the Edit/delete options are available
+- Log out and back in as a different user
+- Confirm that the Edit/delete options are not available for other users' review posts.
+
+Test 3 – Edit/ Delete a Review
+
+Users when logged in can edit/ delete reviews linked to their username only
+
+Test Steps:
+
+- Log in as a user
+- Navigate to post detail view and select a post to edit and update
+- Once completed and confirmed update occurred, click on the trash can to delete it.
+
+Expected Results  | Pass y/n
+------------- | -------------
+Post Click to Review takes user to correct post detail page | Y
+User - not logged in - can only see the post reviews and cannot submit | Y
+User - logged in - can submit a review | Y
+User - logged in - after submitting a review the approval message appears | Y
+User - logged in can edit reviews linked to their username only | Y
+User - logged in can delete reviews linked to their username only | Y
+User - logged in is brought to update review page as expected on clicking edit | Y
+User - logged in receives visual message feedback that their updates have occurred | Y
+User - logged in can successfully edit a review item | Y
+User - logged in can successfully delete a review item | Y
+
+
+### Pagination
+
+Pagination is set to '3' in admin
+
+Test Steps:
+
+View homepage & Scroll to bottom of homepage click on next
+
+Expected Results  | Pass y/n
+------------- | -------------
+User can only see three Service posts per page | Y
+User can navigate to next page to view more posts | Y
+
+
+### External URL Links
+
+All external url links are set to open in a new window and tested, including the footer links
+
+### Responsiveness 
+
+I used chrome developer tools, Techsini & ami throughout all development of the site to ensure that it was responding to all devices down to 280px - 360px width
+
+I tested the site responsiveness on my iphone/ ipad and my family/ friends android mobile devices to ensure the site was rendering and functional across a range of devices.
+
+### Admin 
 
 ### Bugs
 
